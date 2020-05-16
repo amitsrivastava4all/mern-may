@@ -1,0 +1,451 @@
+var a = "1000";
+undefined
+typeof a;
+"string"
+parseInt(a);
+1000
+var e = parseInt(a);
+undefined
+typeof e;
+"number"
+e;
+1000
+a;
+"1000"
+a = "amit";
+"amit"
+parseInt(a);
+NaN
+var e= parseInt(a);
+undefined
+e;
+NaN
+typeof e;
+"number"
+e;
+NaN
+isNaN(e)
+true
+isNaN(e)?0:e
+0
+a = 1000;
+1000
+a/0;
+Infinity
+isFinite(a);
+true
+a;
+1000
+var e= a /0;
+undefined
+e;
+Infinity
+isFinite(e);
+false
+isFinite(e)?e:0
+0
+typeof e;
+"number"
+typeof parseInt
+"function"
+a = "1000";
+"1000"
+e = Number(a);
+1000
+typeof e;
+"number"
+a = "1000.20";
+"1000.20"
+parseFloat(a);
+1000.2
+e = Number(a);
+1000.2
+e;
+1000.2
+typeof Number;
+"function"
+var rr =10000;
+undefined
+typeof rr;
+"number"
+rr++;
+10000
+rr;
+10001
+++rr;
+10002
+var g = new Number(1000);
+undefined
+g;
+Number {1000}
+rr;
+10002
+g.toString();
+"1000"
+g.toFixed()
+"1000"
+g.toPrecision()
+"1000"
+rr;
+10002
+typeof g;
+"object"
+typeof rr;
+"number"
+var r1 = [11,22,334];
+undefined
+typeof r1;
+"object"
+g instanceof Number;
+true
+r1 instanceof Array;
+true
+var t = "Amit";
+undefined
+var t1 = new String("Amit");
+undefined
+typeof t;
+"string"
+typeof t1;
+"object"
+t1 instanceof String;
+true
+t;
+"Amit"
+t1;
+String {"Amit"}
+t;
+"Amit"
+t1;
+String {"Amit"}
+t;
+"Amit"
+t.toUpperCase();
+"AMIT"
+t;
+"Amit"
+var h = 1000;
+undefined
+var tt = [100,20,30,40];
+undefined
+var e1 =new Array(5);
+undefined
+e1;
+(5) [empty × 5]length: 5__proto__: Array(0)
+typeof tt;
+"object"
+typeof e1;
+"object"
+typeof Array;
+"function"
+typeof Number;
+"function"
+typeof String;
+"function"
+typeof Array;
+"function"
+function add(){
+console.log("I am Add ");
+}
+undefined
+typeof add;
+"function"
+add();
+VM4290:2 I am Add 
+undefined
+add(10,2);
+VM4290:2 I am Add 
+undefined
+add("Amit",10);
+VM4290:2 I am Add 
+undefined
+console.dir(add);
+VM4517:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM4290:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log("I am Add ",arguments.length);
+}
+undefined
+add("Amit",10);
+VM4662:2 I am Add  2
+undefined
+add();
+VM4662:2 I am Add  0
+undefined
+function add(){
+console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+for(var i = 0 ; i<arguments.length; i++){
+console.log('Args ',arguments[i]);
+}
+console.log(" I after Loop ",i);
+}
+undefined
+add();
+VM5068:2 I is  undefined
+VM5068:7  I after Loop  0
+undefined
+function add(){
+console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+for(let i = 0 ; i<arguments.length; i++){
+console.log('Args ',arguments[i]);
+}
+console.log(" I after Loop ",i);
+}
+undefined
+add();
+VM5292:2 Uncaught ReferenceError: i is not defined
+    at add (<anonymous>:2:21)
+    at <anonymous>:1:1
+add @ VM5292:2
+(anonymous) @ VM5300:1
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+for(let i = 0 ; i<arguments.length; i++){
+console.log('Args ',arguments[i]);
+}
+//console.log(" I after Loop ",i);
+}
+undefined
+add(10,20);
+VM5336:5 Args  10
+VM5336:5 Args  20
+undefined
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+for(i = 0 ; i<arguments.length; i++){
+console.log('Args ',arguments[i]);
+}
+//console.log(" I after Loop ",i);
+}
+undefined
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+for(i = 0 ; i<arguments.length; i++){
+console.log('Args ',arguments[i]);
+}
+console.log(" I after Loop ",i);
+}
+undefined
+add();
+VM5418:7  I after Loop  0
+undefined
+i;
+0
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(10,20);
+30
+add(1,2,3,4,5,6,7);
+28
+add(1,2,3,4,5,6,"7");
+"217"
+21 +"7"
+"217"
+21 + parseInt("7")
+28
+var g = [10,20,30];
+undefined
+"Amit" + g;
+"Amit10,20,30"
+var g1 = {a:1000, b:2000};
+undefined
+"Amit" + g1;
+"Amit[object Object]"
+g1;
+{a: 1000, b: 2000}
+"10" + "20"
+"1020"
+"10" - "20"
+-10
+"Amit" - "Srivastava"
+NaN
+"10" * "2"
+20
+"10"/"2"
+5
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,3,4,5,6,"7");
+28
+add(1,2,3,4,5,"Amit","7");
+NaN
+20 + NaN
+NaN
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,3,4,5,"Amit","7");
+22
+function firstNumber(){
+return 1000;
+}
+undefined
+function secondNumber(){
+return 2000;
+}
+undefined
+var tt = 1000;
+undefined
+typeof tt;
+"number"
+tt = firstNumber();
+1000
+tt;
+1000
+tt = secondNumber();
+2000
+tt = firstNumber;
+ƒ firstNumber(){
+return 1000;
+}
+typeof tt;
+"function"
+add(firstNumber, secondNumber);
+0
+parseInt(firstNumber);
+NaN
+parseInt(firstNumber());
+1000
+function add(){
+//console.log("I is ",i); // undefined
+//console.log("I am Add ",arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+if(typeof arguments[i]=="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(firstNumber,secondNumber);
+3000
+add(10,"100","Amit",firstNumber,secondNumber,1);
+3111
+10 == "10"
+true
+10 ==="10"
+false
+function jQuery(){
+console.log("JQuery Fn ",arguments.length);
+}
+undefined
+jQuery("#bt")
+VM8821:2 JQuery Fn  1
+undefined
+jQuery(".class")
+VM8821:2 JQuery Fn  1
+undefined
+var $ = jQuery;
+undefined
+$
+ƒ jQuery(){
+console.log("JQuery Fn ",arguments.length);
+}
+$("bt");
+VM8821:2 JQuery Fn  1
+undefined
+var rr = "1000";
+undefined
+var tt = Number(rr);
+undefined
+typeof tt;
+"number"
+function adder(...arg){
+var sum = 0;
+for(let i = 0 ; i<arg.length; i++){
+if(typeof arg[i]=="function"){
+arg[i] = arg[i]();
+}
+sum+=isNaN(parseInt(arg[i]))?0:parseInt(arg[i]);
+}
+return sum;
+}
+undefined
+adder(10,20,"Amit","100",firstNumber);
+1130
+const MAX = 100;
+undefined
+MAX++
+VM10129:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM10129:1
+const arr = [10,20,30];
+undefined
+arr[1] = 100000;
+100000
+arr;
+(3) [10, 100000, 30]
+arr.push(100000);
+4
+arr;
+(4) [10, 100000, 30, 100000]
+arr.pop();
+100000
+arr;
+(3) [10, 100000, 30]
+arr = [888,3434]
+VM10565:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM10565:1
+Number.MAX_SAFE_INTEGER;
+9007199254740991
+Number.MAX_VALUE
+1.7976931348623157e+308
+var g = Number.MAX_SAFE_INTEGER;
+undefined
+g++;
+9007199254740991
+g++
+9007199254740992
+g++
+9007199254740992
+g++
+9007199254740992
+var f = 9007199254740992n;
+undefined
+typeof f;
+"bigint"
+f++;
+9007199254740992n
+f++
+9007199254740993n
+f++
+9007199254740994n
+f++
+9007199254740995n
+typeof g;
+"number"
+g + 100
+9007199254741092
