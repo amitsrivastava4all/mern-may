@@ -1,0 +1,195 @@
+var a ;
+undefined
+typeof a;
+"undefined"
+a = 100;
+100
+typeof a;
+"number"
+a = "Amit";
+"Amit"
+typeof a;
+"string"
+a = 100000.20
+100000.2
+typeof a;
+"number"
+a=1
+1
+typeof a;
+"number"
+a='Amit';
+"Amit"
+a = "Amit";
+"Amit"
+a = `gdfkjghdfjhgkdfj
+gjdfkjghjkdfhgjk
+ghdfjkhgjfdjkg
+gdfjhgjkd`;
+"gdfkjghdfjhgkdfj
+gjdfkjghjkdfhgjk
+ghdfjkhgjfdjkg
+gdfjhgjkd"
+a;
+"gdfkjghdfjhgkdfj
+gjdfkjghjkdfhgjk
+ghdfjkhgjfdjkg
+gdfjhgjkd"
+var a= 10;
+undefined
+var b = 20;
+undefined
+console.log("A is "+a +" And B is "+b);
+
+
+VM1840:1 A is 10 And B is 20
+undefined
+console.log(`A is ${a} and B is ${b}`);
+VM2014:1 A is 10 and B is 20
+undefined
+Number.MAX_SAFE_INTEGER
+9007199254740991
+var e = 9007199254740991n;
+undefined
+e++;
+9007199254740991n
+e++
+9007199254740992n
+e++
+9007199254740993n
+e++
+9007199254740994n
+var g = true;
+undefined
+typeof g;
+"boolean"
+true + true
+2
+var rr = [100,200,300,400,500];
+undefined
+typeof rr;
+"object"
+var ram = {};
+undefined
+typeof ram;
+"object"
+ram instanceof Object;
+true
+typeof Object
+"function"
+var obj = {id:1001 , name:'Ram', salary:8888};
+undefined
+obj.id
+1001
+obj.name;
+"Ram"
+obj.salary;
+8888
+obj;
+{id: 1001, name: "Ram", salary: 8888}
+var arr = [1001,2000,4444,5566,6777,5555,4342];
+undefined
+var obj = {"amit":2222,"ram":4444,"mike":5555,"tim":4442};
+undefined
+obj.amit
+2222
+obj.ram
+4444
+function add(){
+console.log("Add Call ");
+}
+undefined
+typeof add;
+"function"
+var t = add;
+undefined
+typeof t;
+"function"
+t();
+VM3988:2 Add Call 
+undefined
+function add(){
+console.log("I am Add ");
+}
+undefined
+function Customer(){
+function add(){}
+function remove(){}
+function search(){}
+}
+undefined
+typeof Customer
+"function"
+var sum = function(){
+
+}
+undefined
+typeof sum;
+"function"
+sum();
+undefined
+function Customer(){
+var add = function(){
+console.log("I am Add in Customer");
+}
+return add;
+}
+undefined
+var e= Customer();
+undefined
+e;
+ƒ (){
+console.log("I am Add in Customer");
+}
+typeof e;
+"function"
+e();
+VM5896:3 I am Add in Customer
+undefined
+subtract();
+function subtract(){
+console.log("I am Subtract Function ");
+}
+VM6266:3 I am Subtract Function 
+undefined
+divide();
+var divide = function(){
+console.log("I am Divide ");
+}
+VM6528:1 Uncaught TypeError: divide is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM6528:1
+function Calc(){
+var add = function(){
+console.log(" I am Add ");
+}
+var subtract = function(){
+console.log(" I am Subtract ");
+}
+return [add, subtract];
+}
+undefined
+var t = Calc();
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ ()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM6758:2[[Scopes]]: Scopes[1]1: ƒ ()arguments: nullcaller: nulllength: 0name: "subtract"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM6758:5[[Scopes]]: Scopes[1]length: 2__proto__: Array(0)
+t[0]();
+VM6758:3  I am Add 
+undefined
+t[1]();
+VM6758:6  I am Subtract 
+undefined
+function Calc(){
+var add = function add(){
+console.log(" I am Add ");
+}
+var subtract = function sub(){
+console.log(" I am Subtract ");
+}
+return [add, subtract];
+}
+undefined
+var t = Calc();
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ add()1: ƒ sub()length: 2__proto__: Array(0)
