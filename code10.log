@@ -1,0 +1,341 @@
+var arr =[1,2,3,4,5,6];
+undefined
+arr;
+(6) [1, 2, 3, 4, 5, 6]
+var r = arr[0];
+undefined
+r;
+1
+r = arr[1];
+2
+var [x,y] = arr;
+undefined
+x;
+1
+y;
+2
+var [x,,y] = arr;
+undefined
+x;
+1
+y;
+3
+var obj = {id:1001 , name:'Ram',salary:9999};
+undefined
+var t = obj.id;
+undefined
+t;
+1001
+var {name,salary} = obj;
+undefined
+name;
+"Ram"
+salary;
+9999
+var rr = obj.salary;
+undefined
+rr;
+9999
+function show(){
+console.log("I am Show ");
+}
+undefined
+typeof show;
+"function"
+show();
+VM793:2 I am Show 
+undefined
+window;
+Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+window.show();
+VM793:2 I am Show 
+undefined
+show(); // window.show();
+VM793:2 I am Show 
+undefined
+typeof window;
+"object"
+window instanceof Window;
+true
+typeof Window;
+"function"
+var show = 1000;
+undefined
+window.show;
+1000
+show();
+VM1149:1 Uncaught TypeError: show is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM1149:1
+this
+Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+window;
+Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+window == this;
+true
+function Calc(){
+var add = function(){
+    console.log("I am Add ");
+}
+}
+undefined
+Calc();
+undefined
+add;
+VM1331:1 Uncaught ReferenceError: add is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1331:1
+Calc;
+ƒ Calc(){
+var add = function(){
+    console.log("I am Add ");
+}
+}
+function Calc(){
+var add = function(){
+    console.log("I am Add ");
+}
+return add;
+}
+undefined
+var e = Calc();
+undefined
+e;
+ƒ (){
+    console.log("I am Add ");
+}
+typeof e;
+"function"
+e();
+VM1374:3 I am Add 
+undefined
+function Calc(){
+var add = function(){
+    console.log("I am Add ");
+}
+var sub = function(){
+return 10000;
+}
+return [add, sub];
+}
+undefined
+var e = Calc();
+undefined
+e;
+(2) [ƒ, ƒ]0: ƒ ()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1500:2[[Scopes]]: Scopes[1]1: ƒ ()length: 2__proto__: Array(0)
+typeof e;
+"object"
+e instanceof Array;
+true
+e[0]();
+VM1500:3 I am Add 
+undefined
+e[1]();
+10000
+function show(){}
+undefined
+function Calc(){
+var add = function addA(){
+    console.log("I am Add ");
+}
+var sub = function subA(){
+return 10000;
+}
+return [add, sub];
+}
+undefined
+var e = Calc();
+undefined
+e;
+(2) [ƒ, ƒ]0: ƒ addA()arguments: nullcaller: nulllength: 0name: "addA"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1873:2[[Scopes]]: Scopes[1]1: ƒ subA()length: 2__proto__: Array(0)
+e[0]();
+VM1873:3 I am Add 
+undefined
+var q = function test(){
+console.log("I am Test ");
+}
+undefined
+test;
+VM2072:1 Uncaught ReferenceError: test is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2072:1
+q;
+ƒ test(){
+console.log("I am Test ");
+}
+q();
+VM2057:2 I am Test 
+undefined
+test1();
+function test1(){
+console.log("I am Test1 ");
+}
+VM2211:3 I am Test1 
+undefined
+g();
+var g = function test2(){
+console.log("I am Test2 ");
+}
+VM2293:1 Uncaught TypeError: g is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM2293:1
+var add = (a,b)=>a+b;
+undefined
+typeof add;
+"function"
+add(10,20);
+30
+var add = (a,b)=>a+b;
+undefined
+add(10,20,30,40,50);
+30
+add();
+NaN
+undefined + undefined;
+NaN
+var add = (a,b)=>a||0+b||0;
+undefined
+add();
+0
+add(10);
+10
+var obj = null;
+undefined
+obj.a;
+VM2679:1 Uncaught TypeError: Cannot read property 'a' of null
+    at <anonymous>:1:5
+(anonymous) @ VM2679:1
+if(obj!=null){
+console.log(obj.a);
+}
+else{
+console.log("it is null");
+}
+VM2798:5 it is null
+undefined
+if(obj){
+console.log("I am Truthy ");
+}
+else{
+console.log("I am Falsy ");
+}
+VM2914:5 I am Falsy 
+undefined
+obj
+null
+obj = undefined;
+undefined
+if(obj){
+console.log("I am Truthy ");
+}
+else{
+console.log("I am Falsy ");
+}
+VM2964:5 I am Falsy 
+undefined
+obj = ''
+""
+if(obj){
+console.log("I am Truthy ");
+}
+else{
+console.log("I am Falsy ");
+}
+VM2991:5 I am Falsy 
+undefined
+obj = 0
+0
+if(obj){
+console.log("I am Truthy ");
+}
+else{
+console.log("I am Falsy ");
+}
+VM3015:5 I am Falsy 
+undefined
+var a = undefined;
+undefined
+a?"Present":"Absent"
+"Absent"
+a||0
+0
+a;
+undefined
+a=10
+10
+a||0
+10
+add(10,20);
+10
+var add = (a,b)=>(a||0)+(b||0);
+undefined
+add(10,20);
+30
+add();
+0
+add(1);
+1
+add(10,20);
+30
+var e ;
+undefined
+typeof e;
+"object"
+var eee;
+undefined
+typeof eee;
+"undefined"
+var obj11 = null;
+undefined
+typeof obj11;
+"object"
+obj11;
+null
+var f = '';
+undefined
+typeof f;
+"string"
+var add = (a=0,b=0)=>a+b;
+undefined
+add();
+0
+add(100);
+100
+add(100,200);
+300
+var sum = (a,b=20,c,d=10)=>a+b+c+d;
+undefined
+sum(1000,2000,3000);
+6010
+var sum = (a,b=20,c=88,d=10)=>a+b+c+d;
+undefined
+sum(1);
+119
+var add = (a=0,b=0)=>{
+console.log("I am A "+a+" and B is "+b);
+return a+b;
+
+};
+undefined
+add(10,20);
+VM3976:2 I am A 10 and B is 20
+30
+function test12(){}
+undefined
+function add1(){
+return 1000;
+}
+undefined
+add1();
+1000
+function add2(){
+console.log("I am Add2 ");
+}
+undefined
+add2()
+VM4151:2 I am Add2 
+undefined
+typeof NaN
+"number"
+typeof undefined
+"undefined"
