@@ -1,0 +1,46 @@
+function add(x, y){
+var sum = x(1000) + y(2000);
+console.log("Sum is ",sum);
+}
+function f1(first){
+    return first + 1000;
+}
+function f2(second){
+    return second + 2000;
+}
+add(f1,f2);  // add(f1(1), f2(2))
+VM600:3 Sum is  6000
+undefined
+var f3 = (third)=> third+ 3000; 
+undefined
+f3;
+(third)=> third+ 3000
+f3(3)
+3003
+add((q)=>q+2222,(w)=>w+9999);
+VM600:3 Sum is  15221
+undefined
+var va = "";
+undefined
+va.length
+0
+va = " ";
+" "
+va.trim();
+""
+va = " Amit     Srivastava   ";
+" Amit     Srivastava   "
+va.trim();
+"Amit     Srivastava"
+const name = "Amit";
+undefined
+name = "Ram";
+VM1151:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:6
+(anonymous) @ VM1151:1
+var add = (x,y)=>x+y;
+undefined
+typeof add;
+"function"
+add(10,20);
+30
