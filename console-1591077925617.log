@@ -1,0 +1,242 @@
+var a = ()=>1000;
+undefined
+typeof a;
+"function"
+a();
+1000
+var a = (...args)=>{
+var t = 0;
+for(let arg of args){
+t+=arg;
+}
+var e = 1000;
+var w = 999;
+return e + w + t;
+}
+undefined
+a(10,20,30,40,50,60);
+2209
+var a = (...args)=>{
+var t = 0;
+console.log('Args is ', args.length);
+for(let arg of args){
+t+=arg;
+}
+var e = 1000;
+var w = 999;
+return e + w + t;
+}
+undefined
+a(10,20,30,40,50,60);
+VM920:3 Args is  6
+2209
+a(0);
+VM920:3 Args is  1
+1999
+var arr = [1,2,3,4,5];
+undefined
+typeof arr;
+"object"
+arr instanceof Array;
+true
+var e = new Array(5);
+undefined
+e;
+(5) [empty × 5]length: 5__proto__: Array(0)
+typeof e;
+"object"
+e instanceof Array;
+true
+typeof Array;
+"function"
+Array.prototype;
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+var arr = [1,2,3,4,5];
+undefined
+arr.length;
+5
+arr.push(1000);
+6
+arr;
+(6) [1, 2, 3, 4, 5, 1000]
+arr.pop();
+1000
+arr;
+(5) [1, 2, 3, 4, 5]
+arr.length=0;
+0
+arr;
+[]
+var arr = [1,2,3,4,5];
+undefined
+arr.length=3;
+3
+arr;
+(3) [1, 2, 3]
+var arr = [1,2,3,4,5];
+undefined
+arr.splice(0);
+(5) [1, 2, 3, 4, 5]
+arr;
+[]
+var arr = [1,2,3,4,5];
+undefined
+arr.splice(0,1);
+[1]
+arr;
+(4) [2, 3, 4, 5]
+arr.splice(1,2);
+(2) [3, 4]
+arr;
+(2) [2, 5]
+var arr = [1,2,3,4,5];
+undefined
+arr;
+(5) [1, 2, 3, 4, 5]
+var arr = [1,10,2,5,10,100,90,6,70,10,100,200];
+undefined
+arr.find((currentElement)=>currentElement==5);
+5
+arr.find((currentElement)=>currentElement==50000);
+undefined
+arr.find((currentElement)=>currentElement==5 || currentElement==10);
+10
+function find(fn){
+    for arr = [10,20,30,40,50];
+    for(let i= 0; i<arr.length; i++){
+        fn(arr[i]);
+}
+}
+VM2189:2 Uncaught SyntaxError: Unexpected identifier
+function find(fn){
+    var arr = [10,20,30,40,50];
+    for(let i= 0; i<arr.length; i++){
+        fn(arr[i]);
+}
+}
+undefined
+find((currentElement)=>console.log(currentElement));
+VM2421:1 10
+VM2421:1 20
+VM2421:1 30
+VM2421:1 40
+VM2421:1 50
+undefined
+arr.findIndex(currentElement=>currentElement==5);
+3
+arr;
+(12) [1, 10, 2, 5, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.findIndex(currentElement=>currentElement==5000);
+-1
+var index = arr.findIndex(currentElement=>currentElement==5);
+arr.splice(index,1);
+[5]
+arr;
+(11) [1, 10, 2, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.splice(arr.findIndex(currentElement=>currentElement==2),1);
+[2]
+arr;
+(10) [1, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.filter((currentElement)=>currentElement ==10);
+(3) [10, 10, 10]
+arr.filter((currentElement)=>currentElement ==10).length;
+3
+arr;
+(10) [1, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+var e = arr;
+undefined
+e[0]=100000;
+100000
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+e;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+var r = [...arr];
+undefined
+r;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+r[0] =111;
+111
+r;
+(10) [111, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+var sub = arr.filter((currentElement)=>true);
+undefined
+sub;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+sub[0] =999;
+999
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+sub;
+(10) [999, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.forEach((currentElement)=>console.log(currentElement));
+VM3534:1 100000
+VM3534:1 10
+VM3534:1 10
+VM3534:1 100
+VM3534:1 90
+VM3534:1 6
+VM3534:1 70
+VM3534:1 10
+VM3534:1 100
+VM3534:1 200
+undefined
+arr.forEach((currentElement, index)=>console.log(currentElement,index));
+VM3616:1 100000 0
+VM3616:1 10 1
+VM3616:1 10 2
+VM3616:1 100 3
+VM3616:1 90 4
+VM3616:1 6 5
+VM3616:1 70 6
+VM3616:1 10 7
+VM3616:1 100 8
+VM3616:1 200 9
+undefined
+arr.map((currentElement)=>currentElement + currentElement * 0.10);
+(10) [110000, 11, 11, 110, 99, 6.6, 77, 11, 110, 220]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+var formattedPrices = arr.map(currentElement=>`Rs ${currentElement}.00`);
+undefined
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+formattedPrices
+(10) ["Rs 100000.00", "Rs 10.00", "Rs 10.00", "Rs 100.00", "Rs 90.00", "Rs 6.00", "Rs 70.00", "Rs 10.00", "Rs 100.00", "Rs 200.00"]
+var dis = arr.map(currentElement=>currentElement/2);
+undefined
+dis;
+(10) [50000, 5, 5, 50, 45, 3, 35, 5, 50, 100]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.map(c=>c);
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+vr t = arr.map(c=>c);
+VM4284:1 Uncaught SyntaxError: Unexpected identifier
+var t = arr.map(c=>c);
+undefined
+t;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+t[0] =666;
+666
+t;
+(10) [666, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+arr;
+(10) [100000, 10, 10, 100, 90, 6, 70, 10, 100, 200]
+10=="10"
+true
+10==="10"
+false
+var str = "10+20-1000";
+
+undefined
