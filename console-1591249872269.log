@@ -1,0 +1,278 @@
+var arr = [10,20,30,40,50];
+undefined
+arr.indexOf(20);
+1
+arr.indexOf(50);
+4
+arr.indexOf(500);
+-1
+var arr = [10,20,30,40,50,10,20];
+undefined
+arr.indexOf(10);
+0
+arr.lastIndexOf(10);
+5
+var arr = [{id:1001, name:'Ram',salary:9999},
+{id:1002, name:'Shyam',salary:19999}];
+undefined
+arr;
+(2) [{…}, {…}]0: {id: 1001, name: "Ram", salary: 9999}1: {id: 1002, name: "Shyam", salary: 19999}length: 2__proto__: Array(0)
+arr.indexOf(9999);
+-1
+arr.findIndex(current=>current.salary>9000);
+0
+Array.of(70);
+[70]
+Array.of(100,20,90,10);
+(4) [100, 20, 90, 10]
+var e = new Array(10);
+undefined
+e;
+(10) [empty × 10]
+Array.from("amit");
+(4) ["a", "m", "i", "t"]
+Array.isArray(arr);
+true
+Array.isArray("Amit");
+false
+Array.of('a','m','i','t');
+(4) ["a", "m", "i", "t"]
+Array.of('amit');
+["amit"]
+var x = [10,20];
+undefined
+var y = [30,40];
+undefined
+x.concat(y);
+(4) [10, 20, 30, 40]
+var y = [10,20,30,40];
+undefined
+y.copyWithin(0,2,3);
+(4) [30, 20, 30, 40]
+y.copyWithin(0,2,4);
+(4) [30, 40, 30, 40]
+var e = [100,200];
+undefined
+var e1 = [90,1000];
+undefined
+var b = [...e,...e1];
+undefined
+b;
+(4) [100, 200, 90, 1000]
+b[0] = 9999;
+9999
+b;
+(4) [9999, 200, 90, 1000]
+e1;
+(2) [90, 1000]
+e2;
+VM1634:1 Uncaught ReferenceError: e2 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1634:1
+e;
+(2) [100, 200]
+var e = Array.of(90,10,200);
+undefined
+e;
+(3) [90, 10, 200]
+var arr = [1,10,2,5,10,100,90,6,70,10,100,200];
+undefined
+arr.entries();
+Array Iterator {}
+var iterator = arr.entries();
+undefined
+iterator.next()
+{value: Array(2), done: false}done: falsevalue: (2) [0, 1]__proto__: Object
+iterator;
+Array Iterator {}
+iterator.next().value
+(2) [1, 10]
+iterator.next().value
+(2) [2, 2]
+iterator.next().value
+(2) [3, 5]
+iterator.next().value
+(2) [4, 10]
+iterator.next().value
+(2) [5, 100]
+iterator.next().value
+(2) [6, 90]
+iterator.next().value
+(2) [7, 6]
+iterator.next().value
+(2) [8, 70]
+iterator;
+Array Iterator {}__proto__: Array Iterator
+iterator.next();
+{value: Array(2), done: false}
+iterator.next().value
+(2) [10, 100]
+iterator.next().value
+(2) [11, 200]
+iterator.next().value
+undefined
+iterator.next();
+{value: undefined, done: true}
+arr;
+(12) [1, 10, 2, 5, 10, 100, 90, 6, 70, 10, 100, 200]
+for(let i of arr){
+console.log(i);
+}
+VM2235:2 1
+VM2235:2 10
+VM2235:2 2
+VM2235:2 5
+VM2235:2 10
+VM2235:2 100
+VM2235:2 90
+VM2235:2 6
+VM2235:2 70
+VM2235:2 10
+VM2235:2 100
+VM2235:2 200
+undefined
+arr;
+(12) [1, 10, 2, 5, 10, 100, 90, 6, 70, 10, 100, 200]
+var f = arr.values();
+undefined
+f.next();
+{value: 1, done: false}
+f.next().value;
+10
+var arr = new Array(10);
+undefined
+arr;
+(10) [empty × 10]
+arr.fill(0,1,5);
+(10) [empty, 0, 0, 0, 0, empty × 5]
+arr;
+(10) [empty, 0, 0, 0, 0, empty × 5]
+arr.fill(-1);
+(10) [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+arr;
+(10) [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+var arr = [1,10,2,5,10,100,90,6,70,10,100,200];
+undefined
+arr.includes(100);
+true
+arr.includes(9999)
+false
+var arr = ["Ram","Kumar","Sharma"];
+undefined
+arr;
+(3) ["Ram", "Kumar", "Sharma"]
+arr.join();
+"Ram,Kumar,Sharma"
+arr.join(' ');
+"Ram Kumar Sharma"
+arr.join('-');
+"Ram-Kumar-Sharma"
+arr;
+(3) ["Ram", "Kumar", "Sharma"]
+arr.reverse();
+(3) ["Sharma", "Kumar", "Ram"]
+var arr = [1,10,2,5,10,100,90,6,70,10,100,200];
+undefined
+arr.every(ele=>ele>0);
+true
+arr.every(ele=>ele>5);
+false
+arr.some(ele=>ele>100);
+true
+arr.some(ele=>ele>300);
+false
+arr.some(ele=>ele==200);
+true
+arr;
+(12) [1, 10, 2, 5, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.reduce((ele,acc)=>{
+console.log(ele, " " ,acc)
+});
+VM3240:2 1 " " 10
+VM3240:2 undefined " " 2
+VM3240:2 undefined " " 5
+VM3240:2 undefined " " 10
+VM3240:2 undefined " " 100
+VM3240:2 undefined " " 90
+VM3240:2 undefined " " 6
+VM3240:2 undefined " " 70
+VM3240:2 undefined " " 10
+VM3240:2 undefined " " 100
+VM3240:2 undefined " " 200
+undefined
+arr.reduce((acc ,ele)=>{
+console.log(ele, " " ,acc)
+});
+VM3253:2 10 " " 1
+VM3253:2 2 " " undefined
+VM3253:2 5 " " undefined
+VM3253:2 10 " " undefined
+VM3253:2 100 " " undefined
+VM3253:2 90 " " undefined
+VM3253:2 6 " " undefined
+VM3253:2 70 " " undefined
+VM3253:2 10 " " undefined
+VM3253:2 100 " " undefined
+VM3253:2 200 " " undefined
+undefined
+arr.reduce((acc ,ele)=>{
+//console.log(ele, " " ,acc)
+return acc + ele;
+});
+604
+arr;
+(12) [1, 10, 2, 5, 10, 100, 90, 6, 70, 10, 100, 200]
+arr.reduce((acc,ele)=>acc+ele);
+604
+arr.reduce((acc,ele)=>acc+ele,acc=0);
+604
+arr = arr.reduce((tempArr,ele)=>{
+if(ele!=10){
+tempArr.push(ele);
+}
+return tempArr;
+}, tempArr = []);
+(9) [1, 2, 5, 100, 90, 6, 70, 100, 200]
+var flag = false;
+arr.filter(ele=>{
+if(ele==10 && !flag){
+flag = true;
+return true;
+}
+else
+if(ele==10){
+return false;
+}
+return true;
+}
+VM3820:12 Uncaught SyntaxError: missing ) after argument list
+var flag = false;
+arr.filter(ele=>{
+if(ele==10 && !flag){
+flag = true;
+return true;
+}
+else
+if(ele==10){
+return false;
+}
+return true;
+});
+(9) [1, 2, 5, 100, 90, 6, 70, 100, 200]
+arr;
+(9) [1, 2, 5, 100, 90, 6, 70, 100, 200]
+var arr = [1,10,2,5,10,100,90,6,70,10,100,200];
+undefined
+var flag = false;
+arr.filter(ele=>{
+if(ele==10 && !flag){
+flag = true;
+return true;
+}
+else
+if(ele==10){
+return false;
+}
+return true;
+});
+(10) [1, 10, 2, 5, 100, 90, 6, 70, 100, 200]
