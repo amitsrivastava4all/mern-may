@@ -1,0 +1,220 @@
+var arr = ["amit srivastava"];
+undefined
+arr;
+["amit srivastava"]
+var t = Array.of("amitsrivastava")
+undefined
+var t = Array.of("amit srivastava")
+undefined
+t;
+["amit srivastava"]
+var a = 10;
+undefined
+var b = 20;
+undefined
+var c = 90;
+undefined
+var t = Array.of(a,b,c);
+undefined
+t;
+(3) [10, 20, 90]
+var [m,n] = t;
+undefined
+m;
+10
+t;
+(3) [10, 20, 90]
+var arr = [10,20,30,40];
+undefined
+arr.push(100);
+5
+arr;
+(5) [10, 20, 30, 40, 100]
+arr.push(200);
+6
+arr;
+(6) [10, 20, 30, 40, 100, 200]
+arr.pop();
+200
+arr;
+(5) [10, 20, 30, 40, 100]
+arr.unshift(11);
+6
+arr;
+(6) [11, 10, 20, 30, 40, 100]
+arr.shift();;
+11
+arr;
+(5) [10, 20, 30, 40, 100]
+arr.splice(1,1);
+[20]
+arr;
+(4) [10, 30, 40, 100]
+arr.splice(1,1,99);
+[30]
+arr;
+(4) [10, 99, 40, 100]
+arr.splice(1,0,10000);
+[]
+arr;
+(5) [10, 10000, 99, 40, 100]
+Array.prototype.insert= function(){
+console.log("I am Insert ");
+}
+ƒ (){
+console.log("I am Insert ");
+}
+arr.insert();
+VM1110:2 I am Insert 
+undefined
+Array.prototype.insert= function(index, value){
+//console.log("I am Insert ");
+this.splice(index, 0, value);
+return this.length;
+}
+ƒ (index, value){
+//console.log("I am Insert ");
+this.splice(index, 0, value);
+return this.length;
+}
+arr;
+(5) [10, 10000, 99, 40, 100]
+arr.insert(2,87777);
+6
+arr;
+(6) [10, 10000, 87777, 99, 40, 100]
+arr.splice(1,2,90,91);
+(2) [10000, 87777]
+arr;
+(6) [10, 90, 91, 99, 40, 100]0: 101: 902: 913: 994: 405: 100length: 6__proto__: Array(0)
+arr;
+(6) [10, 90, 91, 99, 40, 100]0: 101: 902: 913: 994: 405: 100length: 6__proto__: Array(0)
+arr.sort((a,b)=>a-b);
+(6) [10, 40, 90, 91, 99, 100]
+arr;
+(6) [10, 40, 90, 91, 99, 100]
+arr.sort((a,b)=>b-a);
+(6) [100, 99, 91, 90, 40, 10]
+"amit"-"ram"
+NaN
+"amit".localeCompare("ram")
+-1
+"ram".localeCompare("amit")
+1
+var names = ["ram","shyam","amit","mike","tim","tom"];
+undefined
+names.sort((a,b)=>a.localeCompare(b));
+(6) ["amit", "mike", "ram", "shyam", "tim", "tom"]
+names.sort((a,b)=>b.localeCompare(a));
+(6) ["tom", "tim", "shyam", "ram", "mike", "amit"]
+var arr = [10,20,30,40,50,60,70,80];
+undefined
+console.log(arr);
+VM2221:1 (8) [10, 20, 30, 40, 50, 60, 70, 80]0: 101: 202: 303: 404: 505: 606: 707: 80length: 8__proto__: Array(0)
+undefined
+console.table(arr);
+VM2290:1 (index)Value(index)Value010120230340450560670780Array(8)
+undefined
+var emp = {id:1001 , name:'Ram',salary:9999, bonus:888};
+undefined
+console.table(emp);
+VM2416:1 (index)Value(index)Valueid1001name"Ram"salary9999bonus888Object
+undefined
+console.table(arr);
+VM2425:1 (index)Value(index)Value010120230340450560670780Array(8)
+undefined
+console.table(arr,'Array Values');
+VM2450:1 (index)Value(index)Value010120230340450560670780Array(8)
+undefined
+console.table(arr,['Array Values']);
+VM2459:1 (index)Value(index)Value010120230340450560670780Array(8)
+undefined
+console.table([arr],['Array Values']);
+VM2478:1 (index)(index)0Array(1)
+undefined
+console.table([...arr],['Array Values']);
+VM2485:1 (index)Value(index)Value010120230340450560670780Array(8)
+undefined
+console.table(emp);
+VM2505:1 (index)Value(index)Valueid1001name"Ram"salary9999bonus888Object
+undefined
+console.table(emp,['Object Values']);
+VM2539:1 (index)Value(index)Valueid1001name"Ram"salary9999bonus888Object
+undefined
+console.table([emp],['Object Values']);
+VM2558:1 (index)(index)0Array(1)
+undefined
+console.table([emp],['name']);
+VM2575:1 (index)name(index)name0"Ram"Array(1)
+undefined
+console.table([emp],['id']);
+VM2587:1 (index)id(index)id01001Array(1)
+undefined
+console.table([emp],['salary']);
+VM2606:1 (index)salary(index)salary09999Array(1)
+undefined
+console.table([emp],['salary','name']);
+VM2617:1 (index)salaryname(index)salaryname09999"Ram"Array(1)
+undefined
+console.table([emp],['salary','name','id']);
+VM2627:1 (index)salarynameid(index)salarynameid09999"Ram"1001Array(1)
+undefined
+console.table(emp);
+VM2661:1 (index)Value(index)Valueid1001name"Ram"salary9999bonus888Object
+undefined
+arr;
+(8) [10, 20, 30, 40, 50, 60, 70, 80]
+emp;
+{id: 1001, name: "Ram", salary: 9999, bonus: 888}bonus: 888id: 1001name: "Ram"salary: 9999__proto__: Object
+var emp2 = {id:1002 , name:'Shyam',salary:9999, bonus:888};
+undefined
+var arr = [emp, emp2];
+undefined
+arr;
+(2) [{…}, {…}]0: {id: 1001, name: "Ram", salary: 9999, bonus: 888}1: {id: 1002, name: "Shyam", salary: 9999, bonus: 888}length: 2__proto__: Array(0)
+console.table(arr, ['id', 'name']);
+VM2885:1 (index)idname(index)idname01001"Ram"11002"Shyam"Array(2)
+undefined
+arr;
+(2) [{…}, {…}]
+console.dir(arr);
+VM2943:1 Array(2)0: {id: 1001, name: "Ram", salary: 9999, bonus: 888}1: {id: 1002, name: "Shyam", salary: 9999, bonus: 888}length: 2__proto__: Array(0)insert: ƒ (index, value)concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+undefined
+console.error('Some thing went Wrong ')
+VM3031:1 Some thing went Wrong 
+(anonymous) @ VM3031:1
+undefined
+console.warn('Some Issues');
+VM3090:1 Some Issues
+(anonymous) @ VM3090:1
+undefined
+console.group("Calc Logs");
+VM3143:1 Calc Logs
+undefined
+console.log("Hello");
+VM3189:1 Hello
+undefined
+console.log("Hi");
+VM3199:1 Hi
+undefined
+console.log("Ok");
+VM3208:1 Ok
+undefined
+console.groupEnd();
+undefined
+console.log("Ok");
+VM3256:1 Ok
+undefined
+console.group
+ƒ group() { [native code] }
+console.time("starttime")
+undefined
+var a = 100;
+undefined
+var b = 200;
+undefined
+var c = a + b;
+undefined
+console.timeEnd("starttime");
+VM3489:1 starttime: 24108.538330078125ms
+undefined
