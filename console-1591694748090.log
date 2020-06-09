@@ -1,0 +1,471 @@
+var x = "Amit";
+function show(){
+console.log(x);
+}
+show();
+VM535:3 Amit
+undefined
+var x = "Amit";
+function show(){
+console.log('1st ',x);
+var x = "Ram";
+console.log('2nd ',x);
+}
+show();
+VM612:3 1st  undefined
+VM612:5 2nd  Ram
+undefined
+var x = "Amit";
+function show(){
+console.log('1st ',x);
+var x = "Ram";
+console.log('2nd ',x);
+}
+show();
+VM617:3 1st  undefined
+VM617:5 2nd  Ram
+undefined
+var x = "Amit";
+function show(){
+console.log('1st ',window.x);
+var x = "Ram";
+console.log('2nd ',x);
+}
+show();
+VM661:3 1st  Amit
+VM661:5 2nd  Ram
+undefined
+var x = "Amit";
+function show(){
+console.log('1st ',this.x);
+var x = "Ram";
+console.log('2nd ',x);
+}
+show();
+VM683:3 1st  Amit
+VM683:5 2nd  Ram
+undefined
+window == this;
+true
+show(); // window.show();
+VM683:3 1st  Amit
+VM683:5 2nd  Ram
+undefined
+var t = 100;
+function a(t){
+console.log('1. A is ',t, ' Global ',this.t);
+t = 1000;
+console.log('A is ',t, ' Global ',this.t);
+function b(){
+var t = 90;
+console.log('B is ',t);
+function c(){
+var t = 20;
+console.log('C is ',t);
+} // C Ends
+c();
+} // B ends
+b();
+} // A Ends
+a(999);
+VM1205:3 1. A is  999  Global  100
+VM1205:5 A is  1000  Global  100
+VM1205:8 B is  90
+VM1205:11 C is  20
+undefined
+var t = 100;
+function a(t){
+console.log('1. A is ',t, ' Global ',this.t);
+t = 1000;
+console.log('A is ',t, ' Global ',this.t);
+function b(){
+var t = 90;
+console.log('B is ',t);
+function c(){
+var t = 20;
+console.log('C is ',t);
+function d(){
+console.log('D is ',t);
+}// D Ends
+d();
+} // C Ends
+c();
+} // B ends
+b();
+} // A Ends
+a(999);
+VM1277:3 1. A is  999  Global  100
+VM1277:5 A is  1000  Global  100
+VM1277:8 B is  90
+VM1277:11 C is  20
+VM1277:13 D is  20
+undefined
+var t = 100;
+function a(t){
+console.log('1. A is ',t, ' Global ',this.t);
+t = 1000;
+console.log('A is ',t, ' Global ',this.t);
+function b(){
+var t = 90;
+console.log('B is ',t, ' ',this );
+function c(){
+var t = 20;
+console.log('C is ',t, ' ',this );
+function d(){
+console.log('D is ',t, ' ',this );
+}// D Ends
+d();
+} // C Ends
+c();
+} // B ends
+b();
+} // A Ends
+a(999);
+VM1447:3 1. A is  999  Global  100
+VM1447:5 A is  1000  Global  100
+VM1447:8 B is  90   Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+VM1447:11 C is  20   Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+VM1447:13 D is  20   Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+undefined
+var t = 100;
+function a(t){
+console.log('1. A is ',t, ' Global ',this.t);
+t = 1000;
+console.log('A is ',t, ' Global ',this.t);
+function b(){
+var t = 90;
+console.log('B is ',t, ' ',this.t );
+function c(){
+var t = 20;
+console.log('C is ',t, ' ',this.t );
+function d(){
+console.log('D is ',t, ' ',this.t );
+}// D Ends
+d();
+} // C Ends
+c();
+} // B ends
+b();
+} // A Ends
+a(999);
+VM1508:3 1. A is  999  Global  100
+VM1508:5 A is  1000  Global  100
+VM1508:8 B is  90   100
+VM1508:11 C is  20   100
+VM1508:13 D is  20   100
+undefined
+a(999)
+VM1508:3 1. A is  999  Global  100
+VM1508:5 A is  1000  Global  100
+VM1508:8 B is  90   100
+VM1508:11 C is  20   100
+VM1508:13 D is  20   100
+undefined
+t;
+100
+window.t;
+100
+var b = 90;
+function test2(){
+b = 2000;
+console.log(b);
+}
+test2();
+console.log(b);
+function test(){
+var d = 1000;
+m = 2000;
+console.log(d + m);
+}
+test();
+console.log(d);
+console.log(m);
+
+VM1927:4 2000
+VM1927:7 2000
+VM1927:11 3000
+VM1927:14 Uncaught ReferenceError: d is not defined
+    at <anonymous>:14:13
+(anonymous) @ VM1927:14
+m;
+2000
+
+function test1(){
+function test2(){
+g = 10000;
+}
+test2();
+}
+test1();
+console.log(g);
+VM2095:9 10000
+undefined
+window.g;
+10000
+function test(){
+console.log("I am Test ");
+}
+undefined
+window.test();
+VM2208:2 I am Test 
+undefined
+var a = function(){
+console.log("Anonymous Function Call ");
+}
+undefined
+typeof a;
+"function"
+a();
+VM2322:2 Anonymous Function Call 
+undefined
+window.a();
+VM2322:2 Anonymous Function Call 
+undefined
+function Math(){
+var add = function(a,b){
+console.log(a+b);
+}
+var sub = function(a,b){
+console.log(a-b);
+}
+return [add, sub];
+}
+undefined
+var t = Math();
+undefined
+t;
+(2) [ƒ, ƒ]
+t[0]
+ƒ (a,b){
+console.log(a+b);
+}
+t[0](10,20);
+VM2591:3 30
+undefined
+t[1](10,20);
+VM2591:6 -10
+undefined
+var r = function show(){
+console.log('Show ');
+}
+undefined
+show();
+VM683:3 1st  Amit
+VM683:5 2nd  Ram
+undefined
+show;
+ƒ show(){
+console.log('1st ',this.x);
+var x = "Ram";
+console.log('2nd ',x);
+}
+var r = function show11(){
+console.log('Show11 ');
+}
+undefined
+show11
+VM2947:1 Uncaught ReferenceError: show11 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2947:1
+function ok(){}
+undefined
+ok
+ƒ ok(){}
+show11;
+VM3061:1 Uncaught ReferenceError: show11 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3061:1
+r;
+ƒ show11(){
+console.log('Show11 ');
+}
+function Math(){
+var add = function(a,b){
+console.log(a+b);
+}
+var sub = function(a,b){
+console.log(a-b);
+}
+return [add, sub];
+}
+Math();
+(2) [ƒ, ƒ]
+(function(){
+    console.log("I am IIFE ");
+})();
+VM3207:2 I am IIFE 
+undefined
+(function(){
+    var add = function(a,b){
+console.log(a+b);
+}
+var sub = function(a,b){
+console.log(a-b);
+}
+return [add, sub];
+})();
+(2) [ƒ, ƒ]
+var t = (function(){
+    var add = function(a,b){
+console.log(a+b);
+}
+var sub = function(a,b){
+console.log(a-b);
+}
+return [add, sub];
+})();
+undefined
+t;
+(2) [ƒ, ƒ]
+var t = (function(){
+    var add = function(a,b){
+console.log(a+b);
+}
+var sub = function(a,b){
+console.log(a-b);
+}
+return {add, sub};
+})();
+undefined
+t;
+{add: ƒ, sub: ƒ}
+t.add(100,2);
+VM3246:3 102
+undefined
+(function(){
+    var obj = {
+}
+})();
+undefined
+(function(){
+    var obj = {
+bindEvent(){
+console.log("I am Bind Event ");
+},
+initCap(){
+console.log("I am Init cap ");
+}
+}// object end
+return obj;
+}
+)();
+{bindEvent: ƒ, initCap: ƒ}
+var r = (function(){
+    var obj = {
+bindEvent(){
+console.log("I am Bind Event ");
+},
+initCap(){
+console.log("I am Init cap ");
+}
+}// object end
+return obj;
+}
+)();
+undefined
+r;
+{bindEvent: ƒ, initCap: ƒ}
+r.bindEvent();
+VM3574:4 I am Bind Event 
+undefined
+r.initCap();
+VM3574:7 I am Init cap 
+undefined
+var r = (function(){
+    var obj = {
+bindEvent:function(){
+console.log("I am Bind Event ");
+},
+initCap:function(){
+console.log("I am Init cap ");
+}
+}// object end
+return obj;
+}
+)();
+undefined
+r.bindEvent();
+VM3680:4 I am Bind Event 
+undefined
+var r2 = (function(){
+    var obj = {
+bindEvent:function(){
+console.log("I am Bind Event2 ");
+},
+initCap:function(){
+console.log("I am Init cap2 ");
+}
+}// object end
+return obj;
+}
+)();
+undefined
+r2.bindEvent();
+VM3722:4 I am Bind Event2 
+undefined
+r.bindEvent();
+VM3680:4 I am Bind Event 
+undefined
+var x = 100;
+undefined
+window.x;
+100
+var x = 200;
+undefined
+window.x;
+200
+var t = 100;
+undefined
+console.log('Hello');
+VM3972:1 Hello
+undefined
+function show(){
+return 1000;
+}
+undefined
+show();
+1000
+window;
+Window {parent: Window, opener: null, top: Window, length: 0, Math: ƒ, …}
+typeof window;
+"object"
+window instanceof Window;
+true
+typeof Window;
+"function"
+var arr = [10,20,30,40,50,60];
+undefined
+arr.forEach
+ƒ forEach() { [native code] }
+arr.foreach
+undefined
+function printIt(x){console.log(x);}
+undefined
+arr.forEach(printIt);
+VM4354:1 10
+VM4354:1 20
+VM4354:1 30
+VM4354:1 40
+VM4354:1 50
+VM4354:1 60
+undefined
+function printIt(x,y){console.log(x,y);}
+undefined
+arr.forEach(printIt);
+VM4446:1 10 0
+VM4446:1 20 1
+VM4446:1 30 2
+VM4446:1 40 3
+VM4446:1 50 4
+VM4446:1 60 5
+undefined
+function printIt(x,y,z){console.log(x,y,z);}
+undefined
+arr.forEach(printIt);
+VM4489:1 10 0 (6) [10, 20, 30, 40, 50, 60]
+VM4489:1 20 1 (6) [10, 20, 30, 40, 50, 60]
+VM4489:1 30 2 (6) [10, 20, 30, 40, 50, 60]
+VM4489:1 40 3 (6) [10, 20, 30, 40, 50, 60]
+VM4489:1 50 4 (6) [10, 20, 30, 40, 50, 60]
+VM4489:1 60 5 (6) [10, 20, 30, 40, 50, 60]
+undefined
