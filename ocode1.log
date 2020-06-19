@@ -1,0 +1,278 @@
+var obj = {id:1001, name:'Ram'};
+undefined
+var obj2 = {id:1002, name:'Shyam'};
+undefined
+function disp(){
+console.log('id is ',this.id , ' Name is ',this.name);
+}
+undefined
+disp.apply(obj);
+VM563:2 id is  1001  Name is  Ram
+undefined
+function disp(...args){
+console.log('id is ',this.id , ' Name is ',this.name);
+console.log('Args is ',args);
+}
+undefined
+disp.apply(obj,[100,200,300]);
+VM770:2 id is  1001  Name is  Ram
+VM770:3 Args is  (3) [100, 200, 300]
+undefined
+disp.call(obj,100,200,300);
+VM770:2 id is  1001  Name is  Ram
+VM770:3 Args is  (3) [100, 200, 300]
+undefined
+var arr = [10,20,30,40,50,60];
+undefined
+disp.apply(obj,arr);
+VM770:2 id is  1001  Name is  Ram
+VM770:3 Args is  (6) [10, 20, 30, 40, 50, 60]
+undefined
+disp.apply(arr,obj);
+VM770:2 id is  undefined  Name is  undefined
+VM770:3 Args is  []
+undefined
+function Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+
+undefined
+typeof Employee;
+"function"
+var ram = new Employee(1001, "Ram",9999);
+undefined
+typeof ram;
+"object"
+ram instanceof Employee;
+true
+ram instanceof Object;
+true
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+var obj2 = {id:1002, name:'Shyam'};
+undefined
+var shyam = new Employee(1002, "Shyam",19999);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 19999}
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+ram.bonus = 999;
+999
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, bonus: 999}
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 19999}
+console.dir(ram);
+VM1780:1 Employeebonus: 999id: 1001name: "Ram"salary: 9999__proto__: Object
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, bonus: 999}bonus: 999id: 1001name: "Ram"salary: 9999__proto__: Objectconstructor: ƒ Employee(id, name,salary)arguments: nullcaller: nulllength: 3name: "Employee"prototype: constructor: ƒ Employee(id, name,salary)__proto__: Object__proto__: ƒ ()[[FunctionLocation]]: VM1362:1[[Scopes]]: Scopes[1]__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+ram.constructor
+ƒ Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+Employee.prototype;
+{constructor: ƒ}
+typeof Employee.prototype;
+"object"
+typeof Employee;
+"function"
+Employee.prototype
+{constructor: ƒ}constructor: ƒ Employee(id, name,salary)__proto__: Object
+Employee.prototype.constructor
+ƒ Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+Employee.prototype
+{constructor: ƒ}constructor: ƒ Employee(id, name,salary)arguments: nullcaller: nulllength: 3name: "Employee"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1362:1[[Scopes]]: Scopes[1]__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Employee.prototype.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Object.prototype
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+function A(arg){
+for(let key in arg){
+this[key] = arg[key];
+}
+// this.id =arg.id;
+// this.name = arg.name;
+// this.salary = arg.salary;
+}
+var a = new A({id:1001, name:'Ram',salary:9999});
+undefined
+a;
+A {id: 1001, name: "Ram", salary: 9999}
+a.id;
+1001
+a["id"]
+1001
+var myId = "id";
+undefined
+a.myId;
+undefined
+a["myId"]
+undefined
+a[myId]
+1001
+a.myId;
+undefined
+a["id"]
+1001
+var t = {1:1000,2:2000};
+undefined
+t.1;
+VM2625:1 Uncaught SyntaxError: Unexpected number
+t[1]
+1000
+var arr = [new Employee(1001,"Ram",9999),new Employee(1002,"Shyam",19999)]
+undefined
+arr;
+(2) [Employee, Employee]0: Employee {id: 1001, name: "Ram", salary: 9999}1: Employee {id: 1002, name: "Shyam", salary: 19999}length: 2__proto__: Array(0)
+function Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+this.names = [];
+this.print=function(myname){
+this.names.push(myname);
+}
+}
+
+undefined
+var ram =new Employee(1001, "Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, names: Array(0), print: ƒ}id: 1001name: "Ram"names: []print: ƒ (myname)salary: 9999__proto__: Object
+ram.print("Ram");
+undefined
+ram.names;
+["Ram"]
+ram.print("Ramesh");
+undefined
+ram.names;
+(2) ["Ram", "Ramesh"]
+ram.print("Raj");
+undefined
+ram.names;
+(3) ["Ram", "Ramesh", "Raj"]
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, names: Array(3), print: ƒ}id: 1001name: "Ram"names: (3) ["Ram", "Ramesh", "Raj"]print: ƒ (myname)salary: 9999__proto__: Object
+var shyam = new Employee(1002, "Shyam",8888);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 8888, names: Array(0), print: ƒ}id: 1002name: "Shyam"names: []print: ƒ (myname)salary: 8888__proto__: Object
+shyam.names
+[]
+ram.names;
+(3) ["Ram", "Ramesh", "Raj"]
+function Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+//this.names = [];
+/*this.print=function(myname){
+this.names.push(myname);
+}*/
+}
+
+undefined
+Employee.prototype.print=function(){
+console.log('Id is ',this.id ,' Name is ',this.name);
+}
+ƒ (){
+console.log('Id is ',this.id ,' Name is ',this.name);
+}
+var ram = new Employee(1001, "Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+var shyam = new Employee(1002, "Shyam",8888);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 8888}
+ram.print();
+VM3633:2 Id is  1001  Name is  Ram
+undefined
+shyam.print();
+VM3633:2 Id is  1002  Name is  Shyam
+undefined
+Employee.prototype.names= [];
+[]
+Employee.prototype.fillNames = function(){
+Employee.prototype.names.push(this.name);
+}
+ƒ (){
+Employee.prototype.names.push(this.name);
+}
+ram.fillNames();
+undefined
+ram.names
+["Ram"]
+shyam.fillNames();
+undefined
+shyam.fillNames;
+ƒ (){
+Employee.prototype.names.push(this.name);
+}
+shyam.names;
+(2) ["Ram", "Shyam"]
+ram.names;
+(2) ["Ram", "Shyam"]
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: fillNames: ƒ ()names: (2) ["Ram", "Shyam"]print: ƒ ()constructor: ƒ Employee(id, name,salary)__proto__: Object
+Employee.prototype
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+ram.__proto__
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+Employee.prototype == ram.__proto__
+true
+ram.__proto__.constructor
+ƒ Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+//this.names = [];
+/*this.print=function(myname){
+this.names.push(myname);
+}*/
+}
+ram.__proto__
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+ram.__proto__.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+ram.__proto__
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+ram.__proto__.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+ram.__proto__.__proto__.constructor
+ƒ Object() { [native code] }
+ram.__proto__.constructor
+ƒ Employee(id, name,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+//this.names = [];
+/*this.print=function(myname){
+this.names.push(myname);
+}*/
+}
+ram.__proto__
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+ram.__proto__.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+ram.__proto__.__proto__==Object.prototype
+true
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+Employee.prototype;
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+Object.getPrototypeOf(ram);
+{names: Array(2), print: ƒ, fillNames: ƒ, constructor: ƒ}
+Object.getPrototypeOf(ram) == Employee.prototype;
+true
