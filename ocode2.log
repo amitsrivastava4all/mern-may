@@ -1,0 +1,294 @@
+function A(){
+console.log("I am A ");
+}
+undefined
+A.prototype
+{constructor: ƒ}constructor: ƒ A()__proto__: Object
+A.prototype.constructor
+ƒ A(){
+console.log("I am A ");
+}
+A.prototype.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+A.prototype.__proto__.constructor
+ƒ Object() { [native code] }
+function Student(rollno, name){
+this.rollno = rollno;
+this.name = name;
+}
+undefined
+Student.prototype
+{constructor: ƒ}
+var ram = new Student(1001, "Ram");
+undefined
+ram;
+Student {rollno: 1001, name: "Ram"}name: "Ram"rollno: 1001__proto__: constructor: ƒ Student(rollno, name)__proto__: Object
+ram.__proto__;
+{constructor: ƒ}
+Employee.prototype;
+VM828:1 Uncaught ReferenceError: Employee is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM828:1
+Student.prototype;
+{constructor: ƒ}
+ram.__proto__ == Student.prototype
+true
+typeof ram;
+"object"
+typeof Student.prototype;
+"object"
+ram.__proto__ == Student.prototype
+true
+ram.__proto__.brain = 100;
+100
+Student.prototype
+{brain: 100, constructor: ƒ}
+var math = {
+add(){
+
+}, 
+sub(){
+
+},
+sin(){
+
+}
+}
+undefined
+function Math1(x,y){
+this.x = x;
+this.y = y;
+}
+undefined
+Math1.prototype = math;
+{add: ƒ, sub: ƒ, sin: ƒ}
+var m = new Math(10,20);
+VM1487:1 Uncaught TypeError: Math is not a constructor
+    at <anonymous>:1:9
+(anonymous) @ VM1487:1
+var m = new Math1(10,20);
+undefined
+m;
+Math1 {x: 10, y: 20}x: 10y: 20__proto__: Object
+m.x;
+10
+m.y
+20
+m.__proto__
+{add: ƒ, sub: ƒ, sin: ƒ}add: ƒ add()sin: ƒ sin()sub: ƒ sub()__proto__: Object
+m.__proto__== Math1.prototype
+true
+m.add
+ƒ add(){
+
+}
+m.sub
+ƒ sub(){
+
+}
+m;
+Math1 {x: 10, y: 20}x: 10y: 20__proto__: Object
+var math = {
+add(){
+console.log(this.x+this.y);
+}, 
+sub(){
+console.log(this.x-this.y);
+},
+sin(){
+console.log('This is ',this);
+}
+}
+undefined
+Math1.prototype = math;
+{add: ƒ, sub: ƒ, sin: ƒ}
+var m = new Math1(10,20);
+undefined
+m.add();
+VM1866:3 30
+undefined
+m.sin();
+VM1866:9 This is  Math1 {x: 10, y: 20}x: 10y: 20__proto__: Object
+undefined
+function Person(name, age){
+this.name = name;
+this.age = age;
+}
+Person.prototype.print=function(){
+console.log(`Name is ${this.name} Age is ${this.age}`);
+}
+ƒ (){
+console.log(`Name is ${this.name} Age is ${this.age}`);
+}
+function Employee(name, age , salary, bonus){
+
+Person.call(this, name, age); // Constructor Chain
+this.salary = salary;
+this.bonus = bonus;
+}
+undefined
+Employee.prototype
+{constructor: ƒ}constructor: ƒ Employee(name, age , salary, bonus)__proto__: Object
+Object.create(Employee.prototype);
+Employee {}__proto__: Object
+Employee.prototype = Object.create(Person.prototype);
+Person {}__proto__: print: ƒ ()constructor: ƒ Person(name, age)__proto__: Object
+Employee.prototype.show= function(){
+console.log(`Salary is ${this.salary} and Bonus ${this.bonus}`);
+}
+ƒ (){
+console.log(`Salary is ${this.salary} and Bonus ${this.bonus}`);
+}
+var ram = new Employee("Ram", 21, 99999,999);
+undefined
+ram.name;
+"Ram"
+ram.salary;
+99999
+ram.print();
+VM2230:6 Name is Ram Age is 21
+undefined
+ram.show();
+VM2864:2 Salary is 99999 and Bonus 999
+undefined
+ram;
+Employee {name: "Ram", age: 21, salary: 99999, bonus: 999}age: 21bonus: 999name: "Ram"salary: 99999__proto__: Personshow: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2864:1[[Scopes]]: Scopes[1]__proto__: print: ƒ ()constructor: ƒ Person(name, age)__proto__: Object
+ram.__proto__.prototype
+undefined
+ram.__proto__.show
+ƒ (){
+console.log(`Salary is ${this.salary} and Bonus ${this.bonus}`);
+}
+ram.__proto__.__proto__.print
+ƒ (){
+console.log(`Name is ${this.name} Age is ${this.age}`);
+}
+ram.__proto__.__proto__.__proto__.toString
+ƒ toString() { [native code] }
+ram;
+Employee {name: "Ram", age: 21, salary: 99999, bonus: 999}
+ram.dept = "IT";
+"IT"
+ram;
+Employee {name: "Ram", age: 21, salary: 99999, bonus: 999, dept: "IT"}age: 21bonus: 999dept: "IT"name: "Ram"salary: 99999__proto__: Person
+var shyam = new Employee("Shyam",22,9999,222);
+undefined
+shyam;
+Employee {name: "Shyam", age: 22, salary: 9999, bonus: 222}age: 22bonus: 222name: "Shyam"salary: 9999__proto__: Person
+Employee.prototype.companyName = "Brain Mentors";
+"Brain Mentors"
+ram;
+Employee {name: "Ram", age: 21, salary: 99999, bonus: 999, dept: "IT"}age: 21bonus: 999dept: "IT"name: "Ram"salary: 99999__proto__: PersoncompanyName: "Brain Mentors"show: ƒ ()__proto__: Object
+shyam;
+Employee {name: "Shyam", age: 22, salary: 9999, bonus: 222}age: 22bonus: 222name: "Shyam"salary: 9999__proto__: PersoncompanyName: "Brain Mentors"show: ƒ ()__proto__: Object
+ram.companyName
+"Brain Mentors"
+shyam.companyName
+"Brain Mentors"
+Object.prototype.ttt = 1000;
+1000
+ram.ttt;
+1000
+Person.prototype.ttt = 2000;
+2000
+ram.ttt;
+2000
+Employee.prototype.ttt = 3000;
+3000
+ram.ttt;
+3000
+ram.ttt = 4000
+4000
+ram.ttt;
+4000
+ram;
+Employee {name: "Ram", age: 21, salary: 99999, bonus: 999, dept: "IT", …}
+shyam;
+Employee {name: "Shyam", age: 22, salary: 9999, bonus: 222}
+ram.name = ram.name + " Kumar";
+"Ram Kumar"
+ram;
+Employee {name: "Ram Kumar", age: 21, salary: 99999, bonus: 999, dept: "IT", …}
+shyam;
+Employee {name: "Shyam", age: 22, salary: 9999, bonus: 222}
+ram.companyName
+"Brain Mentors"
+shyam.companyName
+"Brain Mentors"
+Employee.prototype.companyName = "Brain Mentors 2020";
+"Brain Mentors 2020"
+ram.companyName
+"Brain Mentors 2020"
+shyam.companyName
+"Brain Mentors 2020"
+var e = Object.create(Person.prototype);
+undefined
+e;
+Person {}__proto__: print: ƒ ()ttt: 2000constructor: ƒ Person(name, age)__proto__: Object
+var e1 = {};
+undefined
+e1;
+{}
+Person.prototype;
+{ttt: 2000, print: ƒ, constructor: ƒ}
+Object.create(Person.prototype);
+Person {}
+var e = Object.create(Person.prototype);
+undefined
+e;
+Person {}__proto__: Object
+typeof e;
+"object"
+e == Person.prototype;
+false
+Person.prototype
+{ttt: 2000, print: ƒ, constructor: ƒ}
+Employee.prototype
+Person {companyName: "Brain Mentors 2020", ttt: 3000, show: ƒ}companyName: "Brain Mentors 2020"show: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2864:1[[Scopes]]: Scopes[1]ttt: 3000__proto__: Objectprint: ƒ ()ttt: 2000constructor: ƒ Person(name, age)__proto__: Object
+Employee.prototype.print=function(){
+console.log(`Salary is ${this.salary}
+ and Bonus ${this.bonus}`);
+}
+ƒ (){
+console.log(`Salary is ${this.salary}
+ and Bonus ${this.bonus}`);
+}
+var ram = new Employee("Ram", 21, 99999,999);
+undefined
+ram.print();
+VM5349:2 Salary is 99999
+ and Bonus 999
+undefined
+Employee.prototype.print=function(){
+print.call(this);
+console.log(`Salary is ${this.salary}
+ and Bonus ${this.bonus}`);
+}
+ƒ (){
+print.call(this);
+console.log(`Salary is ${this.salary}
+ and Bonus ${this.bonus}`);
+}
+ram.print();
+VM5483:2 Uncaught TypeError: Illegal invocation
+    at Employee.print (<anonymous>:2:7)
+    at <anonymous>:1:5
+Employee.print @ VM5483:2
+(anonymous) @ VM5489:1
+Employee.prototype.print=function(){
+Person.prototype.print.call(this);
+console.log(`Salary is ${this.salary}
+ and Bonus ${this.bonus}`);
+}
+ƒ (){
+Person.prototype.print.call(this);
+console.log(`Salary is ${this.salary}
+ and Bonus ${this.bonus}`);
+}
+ram.print();
+VM2230:6 Name is Ram Age is 21
+VM5546:3 Salary is 99999
+ and Bonus 999
+undefined
+ram;
+Employee {name: "Ram", age: 21, salary: 99999, bonus: 999}age: 21bonus: 999name: "Ram"salary: 99999__proto__: PersoncompanyName: "Brain Mentors 2020"print: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}constructor: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM5546:1[[Scopes]]: Scopes[1]__proto__: Object__proto__: ƒ ()[[FunctionLocation]]: VM5546:1[[Scopes]]: Scopes[1]show: ƒ ()ttt: 3000__proto__: print: ƒ ()ttt: 2000constructor: ƒ Person(name, age)__proto__: Object
