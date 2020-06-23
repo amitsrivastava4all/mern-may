@@ -1,0 +1,669 @@
+function Bird(name,speed){
+this.name = name;
+this.speed = speed;
+}
+Bird.prototype.fly = function(){
+console.log('Name is ',this.name, ' Speed ', this.speed);
+}
+
+ƒ (){
+console.log('Name is ',this.name, ' Speed ', this.speed);
+}
+var b = new Bird('B',20);
+undefined
+b.fly();
+VM707:6 Name is  B  Speed  20
+undefined
+var rocket = {
+name:'G123',
+speed : 1000
+}
+undefined
+Bird.prototype.fly.call(rocket);
+VM707:6 Name is  G123  Speed  1000
+undefined
+rocket
+{name: "G123", speed: 1000}
+typeof Bird.prototype;
+"object"
+b;
+Bird {name: "B", speed: 20}name: "B"speed: 20__proto__: fly: ƒ ()constructor: ƒ Bird(name,speed)__proto__: Object
+b.__proto__==Bird.prototype;
+true
+var x = {a:10};
+undefined
+Object.defineProperty(x,'a':{
+value:10,
+writeable:false
+});
+VM1409:1 Uncaught SyntaxError: missing ) after argument list
+Object.defineProperty(x,'a',{
+value:10,
+writeable:false
+});
+{a: 10}
+x.a;
+10
+x.a=1000;
+1000
+x.a;
+1000
+var y = {};
+undefined
+Object.defineProperty(y, 'tt', {
+  value: 42,
+  writable: false
+});
+{tt: 42}
+y.tt;
+42
+y.tt = 999;
+999
+y;
+{tt: 42}
+const object1 = {};
+
+Object.defineProperty(object1, 'property1', {
+  value: 42,
+  writable: false
+});
+
+object1.property1 = 77;
+// throws an error in strict mode
+
+console.log(object1.property1);
+VM1592:11 42
+undefined
+object1.property1;
+42
+object1.property1 = 444;
+444
+object1.property1;
+42
+var z = {};
+Object.defineProperty(z, 'tt', {
+  value: 10,
+  writable: false
+});
+{tt: 10}
+z.tt = 1000
+1000
+z.tt;
+10
+class Person{
+constructor(name, age){
+this.name = name;
+this.age = age;
+}
+print(){
+console.log(`Name is ${this.name} and Age is ${this.age}`);
+}
+static show(){
+console.log('I am Person Show ');
+}
+
+}
+class Emp extends Person{
+constructor(salary, bonus){
+super("Ram",21);
+this.salary = salary;
+this.bonus = bonus;
+}
+print(){
+super.print();
+console.log(`Salary is ${this.salary} Bonus is ${this.bonus}`); 
+}
+}
+undefined
+var ram = new Emp(9999,222);
+undefined
+ram;
+Emp {name: "Ram", age: 21, salary: 9999, bonus: 222}
+ram.print();
+VM2282:7 Name is Ram and Age is 21
+VM2282:22 Salary is 9999 Bonus is 222
+undefined
+ram;
+Emp {name: "Ram", age: 21, salary: 9999, bonus: 222}age: 21bonus: 222name: "Ram"salary: 9999__proto__: Personconstructor: class Empprint: ƒ print()__proto__: constructor: class Personprint: ƒ print()__proto__: Object
+Person.show();
+VM2282:10 I am Person Show 
+undefined
+class B1{
+constructor(x){
+this._x = x;
+}
+set x(x){
+this.x =x ;
+}
+get x(){
+retutn this.x;
+}
+}
+VM2709:9 Uncaught SyntaxError: Unexpected token 'this'
+class B1{
+constructor(x){
+this._x = x;
+}
+
+}
+undefined
+class B1{
+constructor(x){
+this._x = x;
+}
+set x(x){
+this.x =x ;
+}
+
+}
+undefined
+class B1{
+constructor(x){
+this._x = x;
+}
+set x(x){
+this.x =x ;
+}
+get x{
+retutn this.x;
+}
+}
+VM2726:8 Uncaught SyntaxError: Unexpected token '{'
+class B1{
+constructor(x){
+this._x = x;
+}
+set x(x){
+this.x =x ;
+}
+get x(){
+return this.x;
+}
+}
+undefined
+var b = new B1(100);
+undefined
+b;
+B1 {_x: 100}
+b.x =1000;
+VM2739:6 Uncaught RangeError: Maximum call stack size exceeded
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+    at B1.set x [as x] (<anonymous>:6:8)
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+set x @ VM2739:6
+Show 170 more frames
+class B1{
+constructor(x){
+this._x = x;
+}
+set x(x){
+this._x =x ;
+}
+get x(){
+return this._x;
+}
+}
+undefined
+class B1{
+constructor(x){
+this._x = x;
+}
+set x(x){
+this._x =x ;
+}
+get x(){
+return this._x;
+}
+}
+undefined
+var b = new B1(100);
+undefined
+b.x =200;
+200
+b;
+B1 {_x: 200}
+b.x;
+200
+class C{
+constructor(y){
+this._y = y;
+}
+get y(){
+return this._y;
+}
+}
+undefined
+var c = new C(1000);
+undefined
+c;
+C {_y: 1000}
+c.y;
+1000
+c.y =100000;
+100000
+c;
+C {_y: 1000}
+c.y;
+1000
+class C1{
+constructor(y){
+this._y = y;
+}
+set y(y1){
+if(y1<0){
+throw new Error("Wrong Value it is Negative ");
+}
+else{
+this._y = y1;
+}
+
+}
+get y(){
+return this._y;
+}
+}
+undefined
+var c1 = new C1(100);
+undefined
+c1;
+C1 {_y: 100}
+c1.y = 2000;
+2000
+c1.y ;
+2000
+c1.y = -2000;
+VM3375:7 Uncaught Error: Wrong Value it is Negative 
+    at C1.set y [as y] (<anonymous>:7:7)
+    at <anonymous>:1:6
+set y @ VM3375:7
+(anonymous) @ VM3507:1
+function Emp(){
+this.id = 1001;
+}
+VM3610:1 Uncaught SyntaxError: Identifier 'Emp' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM3610:1
+function Emp1(){
+this.id = 1001;
+}
+undefined
+Emp1.show = function(){
+console.log("I am Show ");
+}
+
+ƒ (){
+console.log("I am Show ");
+}
+Emp1.show();
+VM3701:2 I am Show 
+undefined
+typeof Person;
+"function"
+typeof Emp1;
+"function"
+console.dir(Emp1);
+VM3899:1 ƒ Emp1()show: ƒ ()arguments: nullcaller: nulllength: 0name: "Emp1"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3615:1[[Scopes]]: Scopes[2]
+undefined
+function print(){
+
+}
+undefined
+console.dir(print);
+VM4043:1 ƒ print()arguments: nullcaller: nulllength: 0name: "print"prototype: {constructor: ƒ}constructor: ƒ print()arguments: nullcaller: nulllength: 0name: "print"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3954:1[[Scopes]]: Scopes[2]__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM3954:1[[Scopes]]: Scopes[2]
+undefined
+import
+VM4062:1 Uncaught SyntaxError: Cannot use import statement outside a module
+class Order{
+static m ;
+constructor(name, user, qt){
+this.name = name;
+this.user = user;
+this.qt =qt;
+}
+}
+undefined
+class Order{
+static m ;
+constructor(name, user, qt){
+this.name = name;
+this.user = user;
+this.qt =qt;
+}
+}
+undefined
+class Order{
+static m =0;
+constructor(name, user, qt){
+this.name = name;
+this.user = user;
+this.qt =qt;
+}
+}
+undefined
+Order.m
+0
+class Order{
+static howManyOrderPlaced =0;
+constructor(name, user, qt){
+this.name = name;
+this.user = user;
+this.qt =qt;
+howManyOrderPlaced++;
+}
+}
+undefined
+var order = new Order("Pizza","Amit",2);
+VM4319:7 Uncaught ReferenceError: howManyOrderPlaced is not defined
+    at new Order (<anonymous>:7:1)
+    at <anonymous>:1:13
+Order @ VM4319:7
+(anonymous) @ VM4424:1
+class Order{
+static howManyOrderPlaced =0;
+constructor(name, user, qt){
+this.name = name;
+this.user = user;
+this.qt =qt;
+Order.howManyOrderPlaced++;
+}
+}
+undefined
+var order = new Order("Pizza","Amit",2);
+undefined
+order;
+Order {name: "Pizza", user: "Amit", qt: 2}
+Order.howManyOrderPlaced
+1
+var order2 = new Order("Pizza","Ram",3);
+undefined
+order;
+Order {name: "Pizza", user: "Amit", qt: 2}
+order2;
+Order {name: "Pizza", user: "Ram", qt: 3}
+Order.howManyOrderPlaced
+2
+class Item{
+var f = 1000;
+}
+VM4656:2 Uncaught SyntaxError: Unexpected identifier
+class Item{
+constructor(){
+var f = 1000;
+}
+}
+undefined
+var i = new Item();
+undefined
+i;
+Item {}
+i.f;
+undefined
+var x ={};
+undefined
+typeof x;
+"object"
+x instanceof Object;
+true
+var f = Object.create(Person.prototype);
+undefined
+f;
+Person {}
+x;
+{}
+var f = Object.create({id:1001, name:'Ram'});
+undefined
+f;
+{}__proto__: id: 1001name: "Ram"__proto__: Object
+f.name;
+"Ram"
+f.id;
+1001
+f.salary = 9999;
+9999
+f;
+{salary: 9999}
+function Emp2(){
+this.eid = 1001;
+}
+undefined
+Person;
+class Person{
+constructor(name, age){
+this.name = name;
+this.age = age;
+}
+print(){
+console.log(`Name is ${this.name} and Age is ${this.age}`);
+}
+static show(){
+console.log('I am Person Show ');
+}
+
+}
+function Person1(){
+
+}
+Person.prototype.x = 1000;
+1000
+Person.prototype.y = 2000;
+2000
+Person1.prototype.y = 2000;
+2000
+Person1.prototype.x = 1000;
+1000
+Person1.prototype;
+{y: 2000, x: 1000, constructor: ƒ}x: 1000y: 2000constructor: ƒ Person1()__proto__: Object
+Emp2.prototype= Object.create(Person1.prototype);
+Person1 {}
+var w = {x:Person1.prototype.x, y:Person1.prototype.y};
+undefined
+w;
+{x: 1000, y: 2000}x: 1000y: 2000__proto__: Object
+Emp2.prototype= Object.create(w);
+{}
