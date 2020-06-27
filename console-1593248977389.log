@@ -1,0 +1,407 @@
+var arr = [10,20,30,40,50];
+undefined
+arr.forEach(ele=>console.log(ele));
+console.log('After For Each ');
+VM1164:1 10
+VM1164:1 20
+VM1164:1 30
+VM1164:1 40
+VM1164:1 50
+VM1164:2 After For Each 
+undefined
+setTimeout(()=>{
+console.log("I am Async Callback ")
+},3000);
+1
+VM1342:2 I am Async Callback 
+function asyncTask(){
+setTimeout(()=>{
+var a = 100;
+var b = 200;
+var c = a + b;
+return c;
+},7000);
+}
+undefined
+function asyncTask(fn){
+setTimeout(()=>{
+var a = 100;
+var b = 200;
+var c = a + b;
+//return c;
+fn(c);
+},7000);
+}
+function giveMeC(cValue){
+console.log("give Me C ",cValue );
+}
+// Sync
+//var e = asyncTask();
+// Async
+asyncTask(giveMeC);
+undefined
+VM1846:11 give Me C  300
+try{
+m++;
+}
+catch(e){
+console.log('E is ',e);
+}
+VM1926:5 E is  ReferenceError: m is not defined
+    at <anonymous>:2:1
+undefined
+e;
+VM1937:1 Uncaught ReferenceError: e is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1937:1
+function asyncTask(fn){
+setTimeout(()=>{
+var a = 100;
+var b = 200;
+var c = a + b;
+p++;
+//return c;
+fn(c);
+},7000);
+}
+function giveMeC(cValue){
+console.log("give Me C ",cValue );
+}
+// Sync
+//var e = asyncTask();
+// Async
+try{
+asyncTask(giveMeC);
+}
+catch(e){
+console.log('Async Call ',e);
+}
+console.log("After try and catch ");
+
+VM2081:23 After try and catch 
+undefined
+VM2081:6 Uncaught ReferenceError: p is not defined
+    at <anonymous>:6:1
+(anonymous) @ VM2081:6
+setTimeout (async)
+asyncTask @ VM2081:2
+(anonymous) @ VM2081:18
+function asyncTask(fn,fail){
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+//return c;
+if(a>b){
+fn(c);
+}
+else{
+fail('Fail Because a is Less than B ');
+}
+},7000);
+}
+function giveMeC(cValue){
+console.log("give Me C ",cValue );
+}
+function error(err){
+console.log('Some Error Occur ',err);
+}
+// Sync
+//var e = asyncTask();
+// Async
+asyncTask(giveMeC, error);
+undefined
+VM2280:20 Some Error Occur  Fail Because a is Less than B 
+function asyncTask(fn,fail){
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+fn(c);
+//return c;
+/*if(a>b){
+fn(c);
+}
+else{
+fail('Fail Because a is Less than B ');
+}*/
+},7000);
+}
+function giveMeC(cValue){
+console.log("give Me C ",cValue );
+setTimeout(()=>{
+show();
+},4000);
+}
+function show(){
+setTimeout(()=>{
+console.log('I am Show ');
+},6000);
+}
+function error(err){
+console.log('Some Error Occur ',err);
+}
+// Sync
+//var e = asyncTask();
+// Async
+asyncTask(giveMeC, error);
+undefined
+VM2450:18 give Me C  300
+VM2450:25 I am Show 
+function asyncTask(fn){
+setTimeout(()=>{
+var a = 100;
+var b = 200;
+var c = a + b;
+p++;
+//return c;
+fn(c);
+},7000);
+}
+function giveMeC(cValue){
+console.log("give Me C ",cValue );
+}
+// Sync
+//var e = asyncTask();
+// Async
+try{
+asyncTask(giveMeC);
+}
+catch(e){
+console.log('Async Call ',e);
+}
+console.log("After try and catch ");
+
+VM2461:23 After try and catch 
+undefined
+fs.readFile
+VM2494:1 Uncaught ReferenceError: fs is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2494:1
+VM2461:6 Uncaught ReferenceError: p is not defined
+    at <anonymous>:6:1
+(anonymous) @ VM2461:6
+setTimeout (async)
+asyncTask @ VM2461:2
+(anonymous) @ VM2461:18
+require
+VM2513:1 Uncaught ReferenceError: require is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2513:1
+Promise
+ƒ Promise() { [native code] }
+function asyncTask(fn,fail){
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+fn(c);
+//return c;
+/*if(a>b){
+fn(c);
+}
+else{
+fail('Fail Because a is Less than B ');
+}*/
+},7000);
+}
+function giveMeC(cValue){
+console.log("give Me C ",cValue );
+setTimeout(()=>{
+show();
+},4000);
+}
+function show(){
+setTimeout(()=>{
+console.log('I am Show ');
+},6000);
+}
+function error(err){
+console.log('Some Error Occur ',err);
+}
+// Sync
+//var e = asyncTask();
+// Async
+asyncTask(giveMeC, error);
+undefined
+VM2583:18 give Me C  300
+VM2583:25 I am Show 
+function asyncTaskWithPromise(){
+var pr = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+resolve(c);
+
+},7000); // setTimeout End
+}); // Promise End
+return pr;
+}
+undefined
+var p = asyncTaskWithPromise();
+console.log(p);
+VM2847:2 Promise {<pending>}__proto__: Promise[[PromiseStatus]]: "pending"[[PromiseValue]]: undefined
+undefined
+p;
+Promise {<resolved>: 300}
+function asyncTaskWithPromise(){
+var pr = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+console.log("I am Done ");
+resolve(c);
+
+},7000); // setTimeout End
+}); // Promise End
+return pr;
+}
+undefined
+var p = asyncTaskWithPromise();
+console.log('Promise Status is ',p);
+p.then(data=>console.log('Data Rec ',data))
+.catch(err=>console.log('Err is ',err));
+console.log('This is the End of the code ');
+VM3222:2 Promise Status is  Promise {<pending>}
+VM3222:5 This is the End of the code 
+undefined
+VM2894:8 I am Done 
+VM3222:3 Data Rec  300
+function asyncTaskWithPromise(){
+var pr = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+console.log("I am Done ");
+//resolve(c);
+reject('Rejected Promise .....');
+},7000); // setTimeout End
+}); // Promise End
+return pr;
+}
+undefined
+var p = asyncTaskWithPromise();
+console.log('Promise Status is ',p);
+p.then(data=>console.log('Data Rec ',data))
+.catch(err=>console.log('Err is ',err));
+console.log('This is the End of the code ');
+VM3271:2 Promise Status is  Promise {<pending>}
+VM3271:5 This is the End of the code 
+undefined
+VM3267:8 I am Done 
+VM3271:4 Err is  Rejected Promise .....
+function asyncTaskWithPromise(){
+var pr = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+console.log("I am Done ",this);
+//resolve(c);
+reject('Rejected Promise .....');
+},7000); // setTimeout End
+}); // Promise End
+return pr;
+}
+undefined
+var p = asyncTaskWithPromise();
+console.log('Promise Status is ',p);
+p.then(data=>console.log('Data Rec ',data))
+.catch(err=>console.log('Err is ',err));
+console.log('This is the End of the code ');
+VM3312:2 Promise Status is  Promise {<pending>}
+VM3312:5 This is the End of the code 
+undefined
+VM3308:8 I am Done  Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+VM3312:4 Err is  Rejected Promise .....
+function asyncTaskWithPromise(){
+var pr = new Promise(function(resolve, reject){
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+console.log("I am Done ",this);
+//resolve(c);
+reject('Rejected Promise .....');
+},7000); // setTimeout End
+}); // Promise End
+return pr;
+}
+undefined
+var p = asyncTaskWithPromise();
+console.log('Promise Status is ',p);
+p.then(data=>console.log('Data Rec ',data))
+.catch(err=>console.log('Err is ',err));
+console.log('This is the End of the code ');
+VM3424:2 Promise Status is  Promise {<pending>}
+VM3424:5 This is the End of the code 
+undefined
+VM3420:8 I am Done  Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+VM3424:4 Err is  Rejected Promise .....
+function asyncTaskWithPromise(){
+var pr = new Promise(function(resolve, reject){
+setTimeout(()=>{
+
+var a = 100;
+var b = 200;
+var c = a + b;
+console.log("I am Done ");
+//resolve(c);
+reject('Rejected Promise .....');
+},7000); // setTimeout End
+}); // Promise End
+return pr;
+}
+undefined
+var p = asyncTaskWithPromise();
+console.log('Promise Status is ',p);
+p.then(data=>console.log('Data Rec ',data))
+.catch(err=>console.log('Err is ',err));
+console.log('This is the End of the code ');
+VM3463:2 Promise Status is  Promise {<pending>}
+VM3463:5 This is the End of the code 
+undefined
+VM3459:8 I am Done 
+VM3463:4 Err is  Rejected Promise .....
+var a= 10 * "Hello"
+undefined
+a;
+NaN
+typeof a;
+"number"
+isNaN(a)?0:10
+0
+var p = asyncTaskWithPromise();
+var p2 = asyncTaskWithPromise();
+//var p = db();
+//p.then().catch();
+undefined
+p;
+Promise {<pending>}
+p2
+Promise {<pending>}
+VM3459:8 I am Done 
+VM3459:8 I am Done 
+VM3459:10 Uncaught (in promise) Rejected Promise .....
+(anonymous) @ VM3459:10
+setTimeout (async)
+(anonymous) @ VM3459:3
+asyncTaskWithPromise @ VM3459:2
+(anonymous) @ VM3717:1
+VM3459:10 Uncaught (in promise) Rejected Promise .....
+(anonymous) @ VM3459:10
+setTimeout (async)
+(anonymous) @ VM3459:3
+asyncTaskWithPromise @ VM3459:2
+(anonymous) @ VM3717:2
