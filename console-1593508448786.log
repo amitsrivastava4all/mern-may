@@ -1,0 +1,108 @@
+window.XMLHttpRequest
+ƒ XMLHttpRequest() { [native code] }
+var http = new XMLHttpRequest();
+undefined
+typeof http;
+"object"
+http.onreadystatechange= function(){
+console.log('States are ',http.readyState);
+}
+ƒ (){
+console.log('States are ',http.readyState);
+}
+http.open('GET','http://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20Man&limit=5');
+VM434:2 States are  1
+undefined
+http.send();
+undefined
+VM434:2 States are  2
+VM434:2 States are  3
+VM434:2 States are  4
+http.onreadystatechange= function(){
+console.log('States are ',http.readyState, ' Status ',http.status);
+}
+ƒ (){
+console.log('States are ',http.readyState, ' Status ',http.status);
+}
+http.send();
+VM614:1 Uncaught DOMException: Failed to execute 'send' on 'XMLHttpRequest': The object's state must be OPENED.
+    at <anonymous>:1:6
+(anonymous) @ VM614:1
+http.open('GET','http://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20Man&limit=5');
+VM608:2 States are  1  Status  0
+undefined
+http.send();
+undefined
+VM608:2 States are  2  Status  200
+VM608:2 States are  3  Status  200
+VM608:2 States are  4  Status  200
+http.onreadystatechange= function(){
+console.log('States are ',http.readyState, ' Status ',http.status);
+if(http.readyState==4 && http.status==200){
+console.log('Type ',http.responseType);
+console.log('Correct Response ',http.responseText);
+}
+}
+ƒ (){
+console.log('States are ',http.readyState, ' Status ',http.status);
+if(http.readyState==4 && http.status==200){
+console.log('Type ',http.responseType);
+console.log('Correct Response ',http.respon…
+http.open('GET','http://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20Man&limit=5');
+VM892:2 States are  1  Status  0
+undefined
+http.send();
+undefined
+VM892:2 States are  2  Status  200
+VM892:2 States are  3  Status  200
+VM892:2 States are  4  Status  200
+VM892:4 Type  
+VM892:5 Correct Response  {"data":[{"type":"gif","id":"3lvqNXheb679S","url":"https:\/\/giphy.com\/gifs\/robert-downey-jr-iron-man-eyes-3lvqNXheb679S","slug":"robert-downey-jr-iron-man-eyes-3lvqNXheb679S","bitly_gif_url":"https:\/\/gph.is\/YBYKQX","bitly_url":"https:\/\/gph.is\/YBYKQX","embed_url":"https:\/\/giphy.com\/embed\/3lvqNXheb679S","username":"","source":"https:\/\/merchant0fdeath.tumblr.com\/post\/25438032245\/469-robert-downey-jr-gifs","title":"iron man eyes GIF","rating":"pg","content_url":"","source_tld":"","source_post_url":"https:\/\/merchant0fdeath.tumblr.com\/post\/25438032245\/469-robert-downey-jr-gifs","is_sticker":0,"import_datetime":"1970-01-01 00:00:00","trending_datetime":"1970-01-01 00:00:00","images":{"downsized_large":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","width":"245"},"fixed_height_small_still":{"height":"100","size":"10401","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100_s.gif","width":"163"},"original":{"frames":"40","hash":"d41c151ffbe49dc68ecab97404626b16","height":"151","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.mp4","mp4_size":"1109056","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.webp","webp_size":"420068","width":"245"},"fixed_height_downsampled":{"height":"200","size":"214738","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200_d.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200_d.webp","webp_size":"114382","width":"325"},"downsized_still":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy_s.gif","width":"245"},"fixed_height_still":{"height":"200","size":"35728","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200_s.gif","width":"325"},"downsized_medium":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","width":"245"},"downsized":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","width":"245"},"preview_webp":{"height":"80","size":"29340","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-preview.webp","width":"130"},"original_mp4":{"height":"294","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.mp4","mp4_size":"1109056","width":"480"},"fixed_height_small":{"height":"100","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100.mp4","mp4_size":"82704","size":"368697","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100.webp","webp_size":"154790","width":"163"},"fixed_height":{"height":"200","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200.mp4","mp4_size":"372031","size":"1362137","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200.webp","webp_size":"572530","width":"325"},"downsized_small":{"height":"128","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-downsized-small.mp4","mp4_size":"60659","width":"208"},"preview":{"height":"114","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-preview.mp4","mp4_size":"39695","width":"185"},"fixed_width_downsampled":{"height":"123","size":"94380","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w_d.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w_d.webp","webp_size":"47830","width":"200"},"fixed_width_small_still":{"height":"62","size":"4564","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w_s.gif","width":"100"},"fixed_width_small":{"height":"62","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w.mp4","mp4_size":"32892","size":"149220","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w.webp","webp_size":"74172","width":"100"},"original_still":{"height":"151","size":"27135","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy_s.gif","width":"245"},"fixed_width_still":{"height":"123","size":"16565","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w_s.gif","width":"200"},"looping":{"mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-loop.mp4","mp4_size":"4934354"},"fixed_width":{"height":"123","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w.mp4","mp4_size":"123785","size":"622443","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w.webp","webp_size":"225622","width":"200"},"preview_gif":{"height":"55","size":"48459","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-preview.gif","width":"89"},"480w_still":{"url":"https:\/\/media0.giphy.com\/media\/3lvqNXheb679S\/480w_s.jpg","width":"480","height":"296"}},"analytics_response_payload":"e=Z2lmX2lkPTNsdnFOWGhlYjY3OVMmZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD04ZTNmNGQ0ZmVl
+http.onreadystatechange= function(){
+console.log('States are ',http.readyState, ' Status ',http.status);
+if(http.readyState==4 && http.status==200){
+console.log('Type ',http.responseType);
+console.log('Type of ',typeof http.responseText);
+console.log('Correct Response ',http.responseText);
+}
+}
+ƒ (){
+console.log('States are ',http.readyState, ' Status ',http.status);
+if(http.readyState==4 && http.status==200){
+console.log('Type ',http.responseType);
+console.log('Type of ',typeof http.response…
+http.open('GET','http://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20Man&limit=5');
+VM986:2 States are  1  Status  0
+undefined
+http.send();
+undefined
+VM986:2 States are  2  Status  200
+VM986:2 States are  3  Status  200
+VM986:2 States are  4  Status  200
+VM986:4 Type  
+VM986:5 Type of  string
+VM986:6 Correct Response  {"data":[{"type":"gif","id":"3lvqNXheb679S","url":"https:\/\/giphy.com\/gifs\/robert-downey-jr-iron-man-eyes-3lvqNXheb679S","slug":"robert-downey-jr-iron-man-eyes-3lvqNXheb679S","bitly_gif_url":"https:\/\/gph.is\/YBYKQX","bitly_url":"https:\/\/gph.is\/YBYKQX","embed_url":"https:\/\/giphy.com\/embed\/3lvqNXheb679S","username":"","source":"https:\/\/merchant0fdeath.tumblr.com\/post\/25438032245\/469-robert-downey-jr-gifs","title":"iron man eyes GIF","rating":"pg","content_url":"","source_tld":"","source_post_url":"https:\/\/merchant0fdeath.tumblr.com\/post\/25438032245\/469-robert-downey-jr-gifs","is_sticker":0,"import_datetime":"1970-01-01 00:00:00","trending_datetime":"1970-01-01 00:00:00","images":{"downsized_large":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","width":"245"},"fixed_height_small_still":{"height":"100","size":"10401","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100_s.gif","width":"163"},"original":{"frames":"40","hash":"d41c151ffbe49dc68ecab97404626b16","height":"151","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.mp4","mp4_size":"1109056","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.webp","webp_size":"420068","width":"245"},"fixed_height_downsampled":{"height":"200","size":"214738","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200_d.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200_d.webp","webp_size":"114382","width":"325"},"downsized_still":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy_s.gif","width":"245"},"fixed_height_still":{"height":"200","size":"35728","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200_s.gif","width":"325"},"downsized_medium":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","width":"245"},"downsized":{"height":"151","size":"1023761","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.gif","width":"245"},"preview_webp":{"height":"80","size":"29340","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-preview.webp","width":"130"},"original_mp4":{"height":"294","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy.mp4","mp4_size":"1109056","width":"480"},"fixed_height_small":{"height":"100","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100.mp4","mp4_size":"82704","size":"368697","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100.webp","webp_size":"154790","width":"163"},"fixed_height":{"height":"200","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200.mp4","mp4_size":"372031","size":"1362137","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200.webp","webp_size":"572530","width":"325"},"downsized_small":{"height":"128","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-downsized-small.mp4","mp4_size":"60659","width":"208"},"preview":{"height":"114","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-preview.mp4","mp4_size":"39695","width":"185"},"fixed_width_downsampled":{"height":"123","size":"94380","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w_d.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w_d.webp","webp_size":"47830","width":"200"},"fixed_width_small_still":{"height":"62","size":"4564","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w_s.gif","width":"100"},"fixed_width_small":{"height":"62","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w.mp4","mp4_size":"32892","size":"149220","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/100w.webp","webp_size":"74172","width":"100"},"original_still":{"height":"151","size":"27135","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy_s.gif","width":"245"},"fixed_width_still":{"height":"123","size":"16565","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w_s.gif","width":"200"},"looping":{"mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-loop.mp4","mp4_size":"4934354"},"fixed_width":{"height":"123","mp4":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w.mp4","mp4_size":"123785","size":"622443","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w.gif","webp":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/200w.webp","webp_size":"225622","width":"200"},"preview_gif":{"height":"55","size":"48459","url":"https:\/\/media1.giphy.com\/media\/3lvqNXheb679S\/giphy-preview.gif","width":"89"},"480w_still":{"url":"https:\/\/media0.giphy.com\/media\/3lvqNXheb679S\/480w_s.jpg","width":"480","height":"296"}},"analytics_response_payload":"e=Z2lmX2lkPTNsdnFOWGhlYjY3OVMmZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD04ZTNmNGQ0ZmVl
+http.onreadystatechange= function(){
+console.log('States are ',http.readyState, ' Status ',http.status);
+if(http.readyState==4 && http.status==200){
+//console.log('Type ',http.responseType);
+//console.log('Type of ',typeof http.responseText);
+//console.log('Correct Response ',http.responseText);
+var obj = JSON.parse(http.responseText);
+console.log('Object is ',obj);
+}
+}
+ƒ (){
+console.log('States are ',http.readyState, ' Status ',http.status);
+if(http.readyState==4 && http.status==200){
+//console.log('Type ',http.responseType);
+//console.log('Type of ',typeof http.resp…
+http.open('GET','http://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20Man&limit=5');
+VM1140:2 States are  1  Status  0
+undefined
+http.send();
+undefined
+VM1140:2 States are  2  Status  200
+VM1140:2 States are  3  Status  200
+VM1140:2 States are  4  Status  200
+VM1140:8 Object is  {data: Array(5), pagination: {…}, meta: {…}}data: Array(5)0: analytics: {onload: {…}, onclick: {…}, onsent: {…}}analytics_response_payload: "e=Z2lmX2lkPTNsdnFOWGhlYjY3OVMmZXZlbnRfdHlwZT1HSUZfU0VBUkNIJmNpZD04ZTNmNGQ0ZmVlYjAwYzdkMmZmYzkwMTcyYmE5MmFkNmZhMjdjNGRjODIyNjg4YmI"bitly_gif_url: "https://gph.is/YBYKQX"bitly_url: "https://gph.is/YBYKQX"content_url: ""embed_url: "https://giphy.com/embed/3lvqNXheb679S"id: "3lvqNXheb679S"images: 480w_still: {url: "https://media0.giphy.com/media/3lvqNXheb679S/480w_s.jpg", width: "480", height: "296"}downsized: {height: "151", size: "1023761", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.gif", width: "245"}downsized_large: {height: "151", size: "1023761", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.gif", width: "245"}downsized_medium: {height: "151", size: "1023761", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.gif", width: "245"}downsized_small: {height: "128", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/giphy-downsized-small.mp4", mp4_size: "60659", width: "208"}downsized_still: {height: "151", size: "1023761", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy_s.gif", width: "245"}fixed_height: {height: "200", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/200.mp4", mp4_size: "372031", size: "1362137", url: "https://media1.giphy.com/media/3lvqNXheb679S/200.gif", …}fixed_height_downsampled: {height: "200", size: "214738", url: "https://media1.giphy.com/media/3lvqNXheb679S/200_d.gif", webp: "https://media1.giphy.com/media/3lvqNXheb679S/200_d.webp", webp_size: "114382", …}fixed_height_small: {height: "100", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/100.mp4", mp4_size: "82704", size: "368697", url: "https://media1.giphy.com/media/3lvqNXheb679S/100.gif", …}fixed_height_small_still: {height: "100", size: "10401", url: "https://media1.giphy.com/media/3lvqNXheb679S/100_s.gif", width: "163"}fixed_height_still: {height: "200", size: "35728", url: "https://media1.giphy.com/media/3lvqNXheb679S/200_s.gif", width: "325"}fixed_width: {height: "123", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/200w.mp4", mp4_size: "123785", size: "622443", url: "https://media1.giphy.com/media/3lvqNXheb679S/200w.gif", …}fixed_width_downsampled: {height: "123", size: "94380", url: "https://media1.giphy.com/media/3lvqNXheb679S/200w_d.gif", webp: "https://media1.giphy.com/media/3lvqNXheb679S/200w_d.webp", webp_size: "47830", …}fixed_width_small: {height: "62", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/100w.mp4", mp4_size: "32892", size: "149220", url: "https://media1.giphy.com/media/3lvqNXheb679S/100w.gif", …}fixed_width_small_still: {height: "62", size: "4564", url: "https://media1.giphy.com/media/3lvqNXheb679S/100w_s.gif", width: "100"}fixed_width_still: {height: "123", size: "16565", url: "https://media1.giphy.com/media/3lvqNXheb679S/200w_s.gif", width: "200"}looping: {mp4: "https://media1.giphy.com/media/3lvqNXheb679S/giphy-loop.mp4", mp4_size: "4934354"}original: frames: "40"hash: "d41c151ffbe49dc68ecab97404626b16"height: "151"mp4: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.mp4"mp4_size: "1109056"size: "1023761"url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.gif"webp: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.webp"webp_size: "420068"width: "245"__proto__: Objectoriginal_mp4: {height: "294", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/giphy.mp4", mp4_size: "1109056", width: "480"}original_still: {height: "151", size: "27135", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy_s.gif", width: "245"}preview: {height: "114", mp4: "https://media1.giphy.com/media/3lvqNXheb679S/giphy-preview.mp4", mp4_size: "39695", width: "185"}preview_gif: {height: "55", size: "48459", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy-preview.gif", width: "89"}preview_webp: {height: "80", size: "29340", url: "https://media1.giphy.com/media/3lvqNXheb679S/giphy-preview.webp", width: "130"}__proto__: Objectimport_datetime: "1970-01-01 00:00:00"is_sticker: 0rating: "pg"slug: "robert-downey-jr-iron-man-eyes-3lvqNXheb679S"source: "https://merchant0fdeath.tumblr.com/post/25438032245/469-robert-downey-jr-gifs"source_post_url: "https://merchant0fdeath.tumblr.com/post/25438032245/469-robert-downey-jr-gifs"source_tld: ""title: "iron man eyes GIF"trending_datetime: "1970-01-01 00:00:00"type: "gif"url: "https://giphy.com/gifs/robert-downey-jr-iron-man-eyes-3lvqNXheb679S"username: ""__proto__: Object1: {type: "gif", id: "RQMkfKODe8Okw", url: "https://giphy.com/gifs/friends-iron-man-avengers-RQMkfKODe8Okw", slug: "friends-iron-man-avengers-RQMkfKODe8Okw", bitly_gif_url: "https://gph.is/1aaZBTw", …}2: {type: "gif", id: "l3975CZuyQgoNVuOA", url: "https://giphy.com/gifs/kawaii-iron-man-suit-up-l3975CZuyQgoNVuOA", slug: "kawaii-iron-man-suit-up-l3975CZuyQgoNVuOA", bitly_gif_url: "https://gph.is/1TM0S3J", …}3: {type: "gif", id: "wEgs1cd7vDTt6", url: "https://giphy.com/gifs/iron-man-wEgs1cd7vDTt6", slug: "iron-man-wEgs1cd7vDTt6", bitly_gif_url: "https://gph.is/12A7uhW", …}4: {type: "gif", id: "rlsHtd2YC8k0g", url: "https://giphy.com/gifs/funny-robert-downey-jr-iron-man-rlsHtd2YC8k0g", slug: "funny-robert-downey-jr-iron-man-rlsHtd2YC8k0g", bitly_gif_url: "https://gph.is/1cedivg", …}length: 5__proto__: Array(0)meta: {status: 200, msg: "OK", response_id: "eeb00c7d2ffc90172ba92ad6fa27c4dc822688bb"}pagination: {total_count: 24110, count: 5, offset: 0}__proto__: Object
