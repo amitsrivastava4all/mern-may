@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="./scripts/model/task.js"></script>
+    <script src="./scripts/model/taskoperations.js"></script>
+    <script src="./scripts/controller.js"></script>
+</head>
+<body>
+    <div class='container'>
+        <h1 class='alert-info text-center'>TO Do App </h1>
+        <div class='form-group'>
+            <label for="">Id</label>
+            <input class='form-control' type="text" id='taskid' placeholder="Type Id Here" >
+        </div>
+        <div class='form-group'>
+            <label for="">Name</label>
+            <input class='form-control' type="text" id='taskname' placeholder="Type Name Here" >
+        </div>
+        <div class='form-group'>
+            <label for="">Descr</label>
+           <textarea class='form-control'  id="descr" cols="30" placeholder="Type Desc Here" rows="10"></textarea>
+        </div>
+        <div class='form-group'>
+            <button id='add' class='btn btn-primary'>Add</button>
+            <button class='btn btn-danger'>Delete</button>
+            <button class='btn btn-secondary'>Search</button>
+            <button class='btn btn-warning'>Update</button>
+            <button class='btn btn-success'>Save</button>
+            <button class='btn btn-info'>Save to Local</button>
+            <button class='btn btn-primary'>Load Local</button>
+            <button class='btn btn-success'>Load Server</button>
+            <button class='btn btn-danger'>Sort</button>
+            <button class='btn btn-secondary'>Clear All</button>
+        </div>
+        <div>
+            <h3>Total Records are Mark Records are
+                 UnMark Records are </h3>
+        </div>
+        <table class='table table-bordered'>
+            <thead class='thead-dark'>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Descr</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody id='tasks'>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
