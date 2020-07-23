@@ -1,0 +1,10 @@
+//const obj = require('./two');
+const {add, sub} = require('./two');
+//let result = fn(100,200);
+//console.log('Result is ',result);
+add();
+sub();
+//obj.add();
+//obj.sub();
+//console.log(obj);
+//console.log(obj.fn(10,20));
