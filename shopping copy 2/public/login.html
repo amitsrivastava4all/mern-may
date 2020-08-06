@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load',()=>{
+
+            var name = document.querySelector('#userid').value;
+            var pwd = document.querySelector('#pwd').value;
+            var link = document.querySelector('#load');
+            var url = `login2/${name}/${pwd}`;
+            link.setAttribute('href',url);
+        });
+    </script>
+</head>
+<body>
+    <h1>I am Login Page</h1>
+    <a href="register.html">Register</a>
+    <a id="load" >Path</a>
+    <form method="post" action="login">
+        <input id='userid' value='RAM' name="userid" type="text" placeholder="Type Userid">
+        <br>
+        <input id='pwd' value='RAM' name="pwd" type="password" placeholder="Type Pwd">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
