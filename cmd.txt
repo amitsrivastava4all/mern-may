@@ -1,0 +1,15 @@
+show dbs;
+db.shutdownServer();
+use shopdb;
+db.createCollection("users");
+show collections;
+typeof db.users;
+db.users.insert({userid:'ram',password:'b123'});
+db.users.insert([{userid:'ram1',password:'b123'},{userid:'shyam',password:'fdgf'}]);
+db.users.insertOne({userid:'ram2',password:'b123'});
+db.users.insertMany([{userid:'ram3',password:'b123'},{userid:'shyam1',password:'gfgfdgf'}]);
+db.users.count();
+db.users.find().pretty();
+db.users.findOne({'userid':'shyam1'}).pretty();
+db.users.findOne({'userid':'shyam1'});
+db.dropDataBase()
